@@ -1,2 +1,9 @@
 # Projet_web
-Web projetct for 
+
+
+## Explication
+
+Web project for A2 from exia cesi arras 2018
+
+
+## To do
