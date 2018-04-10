@@ -1,14 +1,16 @@
+DROP  PROCEDURE IF EXISTS connexion;
+DELIMITER | -- Facultatif si votre délimiteur est toujours |
+CREATE PROCEDURE connexion(IN nom VARCHAR(200),IN Prenom VARCHAR(200))  
+    
+BEGIN
+    	select "login good" 
+	from utilisateurs 
+	where (
+		select 1 
+		from utilisateurs 
+		where Nom="brunelot" and Prenom="romain"
+		) limit 1;
+END |
+DELIMITER ;  -- On remet le délimiteur par défaut
 
-IF EXISTS(SELECT 1 FROM utilisateurs WITH(NOLOCK)
-          WHERE IdUsers = 1)
-    BEGIN
-        PRINT 'Record Exists'
-    END
-ELSE
-    BEGIN
-        PRINT 'Record doesn''t Exists'
-    END
 
-
-SELECT 'Record Exist'
-WHERE EXISTS(select 1 from utilisateurs where Nom="brunelot" and Prenom="romain");
