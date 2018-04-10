@@ -20,65 +20,13 @@
     </header>
 	
     <body>
+
+	 
 	<div class="wrapper">
 
-    <!-- L'en-tête -->    
+    
 
-    <section>
-	test
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	test2
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	test3
-	
-	
-	</section>
+    <?php include("Caroussel.php"); ?>
 	
     </div>
     </body>

@@ -14,6 +14,7 @@ font-style: normal;
 
 /* Header */
 
+
 .element_header ul {
     list-style-type: none;
     margin: 0;
@@ -25,6 +26,9 @@ font-style: normal;
 .element_header li {
 	 display: inline;
 	 float: right;
+}
+.element_header li:hover{
+    background-color: rgb(150, 36, 23)
 }
 
 .element_header a {
@@ -49,6 +53,10 @@ font-style: normal;
 	 margin-left: 0px;
 }
 
+.element_header2 li:hover{
+
+    background-color: #8A1002;
+}
 .element_header2 a {
     display: block;
     color: white;
