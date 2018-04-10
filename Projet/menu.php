@@ -8,7 +8,7 @@
 
     <div class="element_menu">
         <ul>
-            <li><a href="connexion.php#tologin"> Connexion </a></li>
+            <li><a href="connexion.php#tologin"> Connexion  </a></li>
             <li><a href="connexion.php#toregister"> Inscription </a></li>
         </ul>
 
@@ -23,7 +23,7 @@
 
     <div class="element_menu2">
         <ul>
-            <li><a href=""> Acceuil </a></li>
+            <li><a href="Acceuil.php">Compétence</a> Acceuil </a></li>
             <li><a href=""> Boite à idée </a></li>
             <li><a href=""> Evénements </a></li>
             <li><a href=""> Boutique </a></li>

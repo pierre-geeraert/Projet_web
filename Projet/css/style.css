@@ -27,6 +27,10 @@ font-style: normal;
 	 float: right;
 }
 
+.element_menu li:hover{
+
+    background: rgb(58, 8, 8)
+}
 .element_menu a {
     display: block;
     color: white;
@@ -35,18 +39,25 @@ font-style: normal;
     text-decoration: none;
 }
 
+
 .element_menu2 ul {
     list-style-type: none;
 	margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #C2242A;
-}
+    background-color: #8A1002;
 
+    
+}
+.element_menu2 li:hover{
+    background-color:rgb(58, 8, 8) ;
+   
+}
 .element_menu2 li {
 	 display: inline;
 	 float: left;
-	 margin-left: 0px;
+     margin-left: 0px;
+     
 }
 
 .element_menu2 a {
@@ -57,8 +68,8 @@ font-style: normal;
     text-decoration: none;
 }
 
-.element_menu_photo li {
-	 margin: 0% 25%;
+.element_menu_photo img {
+	 margin: 0% 2%;
 }
 
 /* Corps du site */
