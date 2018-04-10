@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql-pi-ux-ce.alwaysdata.net
--- Generation Time: Apr 10, 2018 at 10:22 AM
+-- Generation Time: Apr 10, 2018 at 02:41 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.2
 
@@ -21,6 +21,18 @@ SET time_zone = "+00:00";
 --
 -- Database: `pi-ux-ce_web`
 --
+
+DELIMITER $$
+--
+-- Procedures
+--
+CREATE DEFINER=`pi-ux-ce_web`@`%` PROCEDURE `inscription` (IN `nom` VARCHAR(200), IN `Prenom` VARCHAR(200), IN `Email` VARCHAR(200), IN `Mdp` VARCHAR(200), IN `Statut` VARCHAR(200))  BEGIN
+    INSERT INTO utilisateurs(nom,Prenom,Email,Mdp,Statut)
+VALUES
+(nom,Prenom,Email,Mdp,Statut);
+END$$
+
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -47,18 +59,43 @@ INSERT INTO `aimer` (`IdUsers`, `IdImages`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categorie`
+-- Table structure for table `categories`
 --
--- Error reading structure for table pi-ux-ce_web.categorie: #1146 - Table 'pi-ux-ce_web.categorie' doesn't exist
--- Error reading data for table pi-ux-ce_web.categorie: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `pi-ux-ce_web`.`categorie`' at line 1
+
+CREATE TABLE `categories` (
+  `IdCategorie` int(11) NOT NULL,
+  `Categorie` varchar(25) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`IdCategorie`, `Categorie`) VALUES
+(1, 'Informatique'),
+(2, 'Vetements'),
+(3, 'Cuisine');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `commande`
+-- Table structure for table `commandes`
 --
--- Error reading structure for table pi-ux-ce_web.commande: #1146 - Table 'pi-ux-ce_web.commande' doesn't exist
--- Error reading data for table pi-ux-ce_web.commande: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `pi-ux-ce_web`.`commande`' at line 1
+
+CREATE TABLE `commandes` (
+  `IdCommande` int(11) NOT NULL,
+  `DateCommande` date DEFAULT NULL,
+  `Paye` tinyint(1) DEFAULT NULL,
+  `IdUsers` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `commandes`
+--
+
+INSERT INTO `commandes` (`IdCommande`, `DateCommande`, `Paye`, `IdUsers`) VALUES
+(1, '2018-04-11', 0, 1),
+(2, '2018-04-09', 0, 3);
 
 -- --------------------------------------------------------
 
@@ -108,10 +145,26 @@ INSERT INTO `contenir` (`IdCommande`, `IdProduit`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `evenement`
+-- Table structure for table `evenements`
 --
--- Error reading structure for table pi-ux-ce_web.evenement: #1146 - Table 'pi-ux-ce_web.evenement' doesn't exist
--- Error reading data for table pi-ux-ce_web.evenement: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `pi-ux-ce_web`.`evenement`' at line 1
+
+CREATE TABLE `evenements` (
+  `IdEvenement` int(11) NOT NULL,
+  `evenement` varchar(250) DEFAULT NULL,
+  `description` text,
+  `DateEvent` date DEFAULT NULL,
+  `validation` tinyint(1) DEFAULT '0',
+  `IdUsers` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `evenements`
+--
+
+INSERT INTO `evenements` (`IdEvenement`, `evenement`, `description`, `DateEvent`, `validation`, `IdUsers`) VALUES
+(1, 'foot', 'L\'association de sport voudrai organiser un tournoie de foot au stade de Beaurain', NULL, 0, 3),
+(2, 'hotdog', 'Exiamiam voudrait vous proposer des hot dog le midi du 04/04/2018', '2018-04-04', 0, 2),
+(3, 'don de sang', 'Nous vous invitons à participer au don du sang organiser par l\'exia le 08/04/2018', '2018-04-08', 0, 4);
 
 -- --------------------------------------------------------
 
@@ -239,6 +292,19 @@ ALTER TABLE `aimer`
   ADD KEY `FK_aimer_IdImages` (`IdImages`);
 
 --
+-- Indexes for table `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`IdCategorie`);
+
+--
+-- Indexes for table `commandes`
+--
+ALTER TABLE `commandes`
+  ADD PRIMARY KEY (`IdCommande`),
+  ADD KEY `FK_commande_IdUsers` (`IdUsers`);
+
+--
 -- Indexes for table `commenter`
 --
 ALTER TABLE `commenter`
@@ -251,6 +317,13 @@ ALTER TABLE `commenter`
 ALTER TABLE `contenir`
   ADD PRIMARY KEY (`IdCommande`,`IdProduit`),
   ADD KEY `FK_contenir_IdProduit` (`IdProduit`);
+
+--
+-- Indexes for table `evenements`
+--
+ALTER TABLE `evenements`
+  ADD PRIMARY KEY (`IdEvenement`),
+  ADD KEY `FK_evenement_IdUsers` (`IdUsers`);
 
 --
 -- Indexes for table `images`
@@ -292,6 +365,24 @@ ALTER TABLE `voter`
 --
 
 --
+-- AUTO_INCREMENT for table `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `IdCategorie` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `commandes`
+--
+ALTER TABLE `commandes`
+  MODIFY `IdCommande` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `evenements`
+--
+ALTER TABLE `evenements`
+  MODIFY `IdEvenement` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
@@ -321,6 +412,12 @@ ALTER TABLE `aimer`
   ADD CONSTRAINT `FK_aimer_IdUsers` FOREIGN KEY (`IdUsers`) REFERENCES `utilisateurs` (`IdUsers`);
 
 --
+-- Constraints for table `commandes`
+--
+ALTER TABLE `commandes`
+  ADD CONSTRAINT `FK_commande_IdUsers` FOREIGN KEY (`IdUsers`) REFERENCES `utilisateurs` (`IdUsers`);
+
+--
 -- Constraints for table `commenter`
 --
 ALTER TABLE `commenter`
@@ -333,6 +430,12 @@ ALTER TABLE `commenter`
 ALTER TABLE `contenir`
   ADD CONSTRAINT `FK_contenir_IdCommande` FOREIGN KEY (`IdCommande`) REFERENCES `commandes` (`IdCommande`),
   ADD CONSTRAINT `FK_contenir_IdProduit` FOREIGN KEY (`IdProduit`) REFERENCES `produits` (`IdProduit`);
+
+--
+-- Constraints for table `evenements`
+--
+ALTER TABLE `evenements`
+  ADD CONSTRAINT `FK_evenement_IdUsers` FOREIGN KEY (`IdUsers`) REFERENCES `utilisateurs` (`IdUsers`);
 
 --
 -- Constraints for table `images`
