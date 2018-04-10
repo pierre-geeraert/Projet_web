@@ -9,7 +9,7 @@
     <div class="element_header">
         <ul>
             <li><a href="connexion.php"> Connexion </a></li>
-            <li><a href="connexion.php"> Inscription </a></li>
+            <li><a href="inscription.php"> Inscription </a></li>
         </ul>
 
     </div> 
