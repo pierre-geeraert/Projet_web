@@ -1,0 +1,74 @@
+/*####################################
+ Auteur : Groupe 3
+ Date : 2018
+ Contexte : Projet Web Exia CESI
+ #####################################*/ 
+
+/* Déclaration de nouvelles polices */
+@font-face {
+font-family: 'staywildy';
+src: url('fonts/StayWildy/StayWildy.ttf');
+font-weight: normal;
+font-style: normal;
+}
+
+/* Header */
+
+.element_menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #8A1002;
+}
+
+.element_menu li {
+	 display: inline;
+	 float: right;
+}
+
+.element_menu a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.element_menu2 ul {
+    list-style-type: none;
+	margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #C2242A;
+}
+
+.element_menu2 li {
+	 display: inline;
+	 float: left;
+	 margin-left: 0px;
+}
+
+.element_menu2 a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.element_menu_photo li {
+	 margin: 0% 25%;
+}
+
+/* Corps du site */
+body {
+	margin: auto;
+    width: 100%;
+}
+
+/* Contenu */
+
+.container {
+	padding:  20px;
+}
