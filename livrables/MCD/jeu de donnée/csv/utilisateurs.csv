@@ -1,0 +1,5 @@
+IdUsers,nom,Prenom,Email,Mdp,Statut
+1,brunelot,romain,rbrunelot@cesi.fr,K666,tuteur
+2,lecomte,alexandre,alexandre.lecomte@viacesi.fr,PowerEdge1,eleve
+3,exiamiam,president,exiamiam@viacesi.fr,Exiamiam2,eleve
+4,prussel,loic,lprussel@cesi.fr,Prussel0,tuteur

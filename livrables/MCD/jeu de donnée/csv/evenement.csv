@@ -1,0 +1,4 @@
+IdEvenement,evenement,DateEvent,validation,IdUsers
+1,foot,null,false,3
+2,hotdog,2018/04/04,true,2
+3,don de sang,2018/04/08,true,4
