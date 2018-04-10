@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql-pi-ux-ce.alwaysdata.net
--- Generation Time: Apr 10, 2018 at 02:41 PM
+-- Generation Time: Apr 10, 2018 at 04:22 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.2
 
@@ -21,18 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `pi-ux-ce_web`
 --
-
-DELIMITER $$
---
--- Procedures
---
-CREATE DEFINER=`pi-ux-ce_web`@`%` PROCEDURE `inscription` (IN `nom` VARCHAR(200), IN `Prenom` VARCHAR(200), IN `Email` VARCHAR(200), IN `Mdp` VARCHAR(200), IN `Statut` VARCHAR(200))  BEGIN
-    INSERT INTO utilisateurs(nom,Prenom,Email,Mdp,Statut)
-VALUES
-(nom,Prenom,Email,Mdp,Statut);
-END$$
-
-DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -100,25 +88,26 @@ INSERT INTO `commandes` (`IdCommande`, `DateCommande`, `Paye`, `IdUsers`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `commenter`
+-- Table structure for table `commentaires`
 --
 
-CREATE TABLE `commenter` (
-  `commentaire` varchar(25) DEFAULT NULL,
+CREATE TABLE `commentaires` (
+  `IdCom` int(11) NOT NULL,
+  `commentaire` longtext,
   `DateComment` date DEFAULT NULL,
-  `IdUsers` int(11) NOT NULL,
-  `IdImages` int(11) NOT NULL
+  `IdImages` int(11) DEFAULT NULL,
+  `IdUsers` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `commenter`
+-- Dumping data for table `commentaires`
 --
 
-INSERT INTO `commenter` (`commentaire`, `DateComment`, `IdUsers`, `IdImages`) VALUES
-('conviviale', '2018-04-10', 1, 3),
-('good', '2018-04-05', 3, 1),
-('interessant', '2018-04-06', 4, 1),
-('rigolo', '2018-04-10', 4, 2);
+INSERT INTO `commentaires` (`IdCom`, `commentaire`, `DateComment`, `IdImages`, `IdUsers`) VALUES
+(1, 'conviviale', '2018-04-10', 3, 1),
+(2, 'good', '2018-04-05', 1, 3),
+(3, 'interessant', '2018-04-06', 1, 4),
+(4, 'rigolo', '2018-04-10', 2, 4);
 
 -- --------------------------------------------------------
 
@@ -151,9 +140,9 @@ INSERT INTO `contenir` (`IdCommande`, `IdProduit`) VALUES
 CREATE TABLE `evenements` (
   `IdEvenement` int(11) NOT NULL,
   `evenement` varchar(250) DEFAULT NULL,
-  `description` text,
+  `description` varchar(250) DEFAULT NULL,
   `DateEvent` date DEFAULT NULL,
-  `validation` tinyint(1) DEFAULT '0',
+  `validation` tinyint(1) DEFAULT NULL,
   `IdUsers` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -220,6 +209,7 @@ INSERT INTO `inscrire` (`IdUsers`, `IdEvenement`) VALUES
 CREATE TABLE `produits` (
   `IdProduit` int(11) NOT NULL,
   `Nom` varchar(250) DEFAULT NULL,
+  `description` varchar(25) DEFAULT NULL,
   `Prix` int(11) DEFAULT NULL,
   `Url` varchar(25) DEFAULT NULL,
   `IdCategorie` int(11) DEFAULT NULL
@@ -229,11 +219,11 @@ CREATE TABLE `produits` (
 -- Dumping data for table `produits`
 --
 
-INSERT INTO `produits` (`IdProduit`, `Nom`, `Prix`, `Url`, `IdCategorie`) VALUES
-(1, 'souris', 10, 'Images/souris.png', 1),
-(2, 'tapis de souris', 5, 'Images/tapisSouris.png', 1),
-(3, 'mug', 5, 'Images/mug.png', 3),
-(4, 'T-shirt', 10, 'Images/tShirt.png', 2);
+INSERT INTO `produits` (`IdProduit`, `Nom`, `description`, `Prix`, `Url`, `IdCategorie`) VALUES
+(1, 'souris', NULL, 10, 'Images/souris.png', 1),
+(2, 'tapis de souris', NULL, 5, 'Images/tapisSouris.png', 1),
+(3, 'mug', NULL, 5, 'Images/mug.png', 3),
+(4, 'T-shirt', NULL, 10, 'Images/tShirt.png', 2);
 
 -- --------------------------------------------------------
 
@@ -305,11 +295,12 @@ ALTER TABLE `commandes`
   ADD KEY `FK_commande_IdUsers` (`IdUsers`);
 
 --
--- Indexes for table `commenter`
+-- Indexes for table `commentaires`
 --
-ALTER TABLE `commenter`
-  ADD PRIMARY KEY (`IdUsers`,`IdImages`),
-  ADD KEY `FK_commenter_IdImages` (`IdImages`);
+ALTER TABLE `commentaires`
+  ADD PRIMARY KEY (`IdCom`),
+  ADD KEY `FK_commentaires_IdImages` (`IdImages`),
+  ADD KEY `FK_commentaires_IdUsers` (`IdUsers`);
 
 --
 -- Indexes for table `contenir`
@@ -330,8 +321,8 @@ ALTER TABLE `evenements`
 --
 ALTER TABLE `images`
   ADD PRIMARY KEY (`IdImages`),
-  ADD KEY `FK_Images_IdUsers` (`IdUsers`),
-  ADD KEY `FK_Images_IdEvenement` (`IdEvenement`);
+  ADD KEY `FK_images_IdUsers` (`IdUsers`),
+  ADD KEY `FK_images_IdEvenement` (`IdEvenement`);
 
 --
 -- Indexes for table `inscrire`
@@ -377,6 +368,12 @@ ALTER TABLE `commandes`
   MODIFY `IdCommande` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `commentaires`
+--
+ALTER TABLE `commentaires`
+  MODIFY `IdCom` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `evenements`
 --
 ALTER TABLE `evenements`
@@ -418,11 +415,11 @@ ALTER TABLE `commandes`
   ADD CONSTRAINT `FK_commande_IdUsers` FOREIGN KEY (`IdUsers`) REFERENCES `utilisateurs` (`IdUsers`);
 
 --
--- Constraints for table `commenter`
+-- Constraints for table `commentaires`
 --
-ALTER TABLE `commenter`
-  ADD CONSTRAINT `FK_commenter_IdImages` FOREIGN KEY (`IdImages`) REFERENCES `images` (`IdImages`),
-  ADD CONSTRAINT `FK_commenter_IdUsers` FOREIGN KEY (`IdUsers`) REFERENCES `utilisateurs` (`IdUsers`);
+ALTER TABLE `commentaires`
+  ADD CONSTRAINT `FK_commentaires_IdImages` FOREIGN KEY (`IdImages`) REFERENCES `images` (`IdImages`),
+  ADD CONSTRAINT `FK_commentaires_IdUsers` FOREIGN KEY (`IdUsers`) REFERENCES `utilisateurs` (`IdUsers`);
 
 --
 -- Constraints for table `contenir`
@@ -441,8 +438,8 @@ ALTER TABLE `evenements`
 -- Constraints for table `images`
 --
 ALTER TABLE `images`
-  ADD CONSTRAINT `FK_Images_IdEvenement` FOREIGN KEY (`IdEvenement`) REFERENCES `evenements` (`IdEvenement`),
-  ADD CONSTRAINT `FK_Images_IdUsers` FOREIGN KEY (`IdUsers`) REFERENCES `utilisateurs` (`IdUsers`);
+  ADD CONSTRAINT `FK_images_IdEvenement` FOREIGN KEY (`IdEvenement`) REFERENCES `evenements` (`IdEvenement`),
+  ADD CONSTRAINT `FK_images_IdUsers` FOREIGN KEY (`IdUsers`) REFERENCES `utilisateurs` (`IdUsers`);
 
 --
 -- Constraints for table `inscrire`
