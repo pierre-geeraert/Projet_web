@@ -1,8 +1,11 @@
-DROP  PROCEDURE IF EXISTS inscription;
+
+DROP  PROCEDURE IF EXISTS register;
 DELIMITER | -- Facultatif si votre délimiteur est toujours |
-CREATE PROCEDURE inscription(IN nom VARCHAR(200),IN Prenom VARCHAR(200),IN Email VARCHAR(200),IN Mdp VARCHAR(200),IN Statut VARCHAR(200))  
+CREATE PROCEDURE register(IN name VARCHAR(200),IN surname VARCHAR(200),IN email VARCHAR(200),IN password VARCHAR(200),IN status VARCHAR(200))  
     
 BEGIN
-    select 
+    INSERT INTO `users`(name,surname,email,password,status)
+VALUES
+(name,surname,email,password,status);
 END |
 DELIMITER ;  -- On remet le délimiteur par défaut
