@@ -15,24 +15,27 @@
         <title>BDE Arras</title>
     </head>
 
+    <!-- L'en-tête -->    
     <header>
-	<?php include("header.php"); ?>
-    </header>
 	
-    <body>
+	<?php include("header.php"); ?>
 
-	 
+    </header>
+    <body>
 	<div class="wrapper">
 
-    
-
-    <?php include("Caroussel.php"); ?>
+    <section>
 	
+	
+	
+	</section>
     </div>
     </body>
 	
 	<footer>
+	
 	<?php include("footer.php"); ?>
+	
 	</footer>
 
 </html>

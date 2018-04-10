@@ -14,7 +14,8 @@ font-style: normal;
 
 /* Header */
 
-.element_menu ul {
+
+.element_header ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -22,12 +23,15 @@ font-style: normal;
     background-color: #8A1002;
 }
 
-.element_menu li {
+.element_header li {
 	 display: inline;
 	 float: right;
 }
+.element_header li:hover{
+    background-color: rgb(150, 36, 23)
+}
 
-.element_menu a {
+.element_header a {
     display: block;
     color: white;
     text-align: center;
@@ -35,7 +39,7 @@ font-style: normal;
     text-decoration: none;
 }
 
-.element_menu2 ul {
+.element_header2 ul {
     list-style-type: none;
 	margin: 0;
     padding: 0;
@@ -43,13 +47,17 @@ font-style: normal;
     background-color: #C2242A;
 }
 
-.element_menu2 li {
+.element_header2 li {
 	 display: inline;
 	 float: left;
 	 margin-left: 0px;
 }
 
-.element_menu2 a {
+.element_header2 li:hover{
+
+    background-color: #8A1002;
+}
+.element_header2 a {
     display: block;
     color: white;
     text-align: center;
@@ -57,18 +65,30 @@ font-style: normal;
     text-decoration: none;
 }
 
-.element_menu_photo li {
-	 margin: 0% 25%;
+.element_header_photo img { 
+	margin: 0% 1%; 
+}
+
+.footer {
+	/*position: absolute;
+	width: 100%;
+	bottom: 0;*/
+	margin-top: auto;
+	background: #2b2b2b;
+	color: white;
+	padding: 1px;
 }
 
 /* Corps du site */
-body {
-	margin: auto;
-    width: 100%;
+html, body {
+	position: relative;
+  height: 100%;
+  padding: 0;
+  margin: 0;
 }
 
-/* Contenu */
-
-.container {
-	padding:  20px;
+.wrapper {
+	min-height: calc(100% - 294px);
+	position: relative;
+	background-color: white;
 }
