@@ -15,76 +15,27 @@
         <title>BDE Arras</title>
     </head>
 
+    <!-- L'en-tête -->    
     <header>
-	<?php include("header.php"); ?>
-    </header>
 	
+	<?php include("header.php"); ?>
+
+    </header>
     <body>
 	<div class="wrapper">
 
-    <!-- L'en-tête -->    
-
     <section>
-	test
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	test2
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	test3
+	
 	
 	
 	</section>
-	
     </div>
     </body>
 	
 	<footer>
+	
 	<?php include("footer.php"); ?>
+	
 	</footer>
 
 </html>
