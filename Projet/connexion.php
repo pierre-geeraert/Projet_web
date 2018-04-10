@@ -15,27 +15,25 @@
         <title>BDE Arras</title>
     </head>
 
-    <!-- L'en-tête -->    
     <header>
-	
 	<?php include("header.php"); ?>
-
     </header>
+	
     <body>
-	<div class="wrapper">
-    <h1>TEST 3</h1>
-    <section>
-	
-	
-	
-	</section>
-    </div>
+		<div class="wrapper">
+
+			<form method="POST" action="scriptConnexion.php">
+					<fieldset><legend>Login : </legend><input type="text" name="login" placeholder="xyz@example.com" ></fieldset>
+					<fieldset><legend>Mot de passe : </legend><input type="pass" name="motdepasse" placeholder="Mot de passe" /></fieldset>
+					<input type="submit" name="submit" value="Se connecter"/>
+			</form>
+
+		
+		</div>
     </body>
 	
 	<footer>
-	
 	<?php include("footer.php"); ?>
-	
 	</footer>
 
 </html>

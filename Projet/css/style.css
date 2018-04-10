@@ -92,3 +92,8 @@ html, body {
 	position: relative;
 	background-color: white;
 }
+
+.wrapper2 {
+	position: absolute;
+	float: left;
+}

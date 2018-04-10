@@ -1,0 +1,5 @@
+IdProduit,Nom,prix,Url,IdCategorie
+1,souris,10,Images/souris.png,1
+2,tapis de souris,5,Images/tapisSouris.png,1
+3,mug,5,Images/mug.png,3
+4,T-shirt,10,Images/tShirt.png,2
