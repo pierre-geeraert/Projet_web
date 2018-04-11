@@ -167,7 +167,7 @@ class Carousel {
      * Ecouteur pour le redimensionnement de la fenêtre
      */
     onWindowResize () {
-      let mobile = window.innerWidth < 800
+      let mobile = window.innerWidth < 500
       if (mobile !== this.isMobile) {
         this.isMobile = mobile
         this.setStyle()

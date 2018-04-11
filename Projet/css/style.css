@@ -15,6 +15,7 @@ font-style: normal;
 /* Header */
 
 
+
 .element_header ul {
     list-style-type: none;
     margin: 0;
@@ -28,7 +29,7 @@ font-style: normal;
 	 float: right;
 }
 .element_header li:hover{
-    background-color: rgb(150, 36, 23)
+    background-color: rgb(150, 36, 23);
 }
 
 .element_header a {
@@ -46,6 +47,59 @@ font-style: normal;
     overflow: hidden;
     background-color: #C2242A;
 }
+
+.even1 {
+	margin: 2%;
+	margin-left: calc(48% - 350px);
+}
+.even_individuel {
+	margin: 2%;
+}
+
+.even1 a:hover{
+	color: white;
+}
+
+.ballon {
+	float: left;
+	width: 15%;
+	margin-right: 5%;	
+}
+
+.description {
+	float: left;
+	width: 80%;
+}
+
+
+.even2 {
+	margin: 2%;
+	margin-left: calc(48% - 350px);
+}
+
+.even2 a:hover{
+	color: white;
+}
+
+.inner2 {
+	float: left;	
+}
+
+.inner:hover {
+	background-color: #8A1002;
+}
+
+fieldset
+{
+  box-shadow: 6px 6px 0px #2b2b2b;
+  border:2px solid black;
+  -moz-border-radius:8px;	
+  border-radius:8px;
+  background-color:#C2242A;
+  max-width:700px;
+  padding:16px;	
+}
+
 
 .element_header2 li {
 	 display: inline;
@@ -69,10 +123,11 @@ font-style: normal;
 	margin: 0% 1%; 
 }
 
+
 .footer {
-	/*position: absolute;
+	position: relative;
 	width: 100%;
-	bottom: 0;*/
+	bottom: auto;
 	margin-top: auto;
 	background: #2b2b2b;
 	color: white;
@@ -85,15 +140,51 @@ html, body {
   height: 100%;
   padding: 0;
   margin: 0;
+ 
 }
 
 .wrapper {
 	min-height: calc(100% - 294px);
 	position: relative;
-	background-color: white;
-}
+    background-color: white;}
 
 .wrapper2 {
 	position: absolute;
+<<<<<<< HEAD
+    float: left;
+    
+}
+
+=======
 	float: left;
 }
+
+
+.element_header_logout {
+	float: right;
+	color: white;
+}
+.element_header_logout :hover{
+    background-color: rgb(150, 36, 23);
+}
+
+#menu {
+float: left;
+}
+#menu li a:hover {
+ background-color: rgb(150, 36, 23);
+ }
+#menu ul li ul {
+ display:none;
+ }
+#menu ul li:hover ul {
+ display:block;
+ }
+#menu li:hover ul li {
+ float:none;
+ background-color: rgb(150, 36, 23);
+ }
+#menu li ul {
+ position:absolute;
+ }
+>>>>>>> e765893555fd07c53d5c9d2d7c84b4926301c51b

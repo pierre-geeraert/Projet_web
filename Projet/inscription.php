@@ -11,7 +11,7 @@
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="css/style.css"/>
-        <link rel="stylesheet"href="css/Form_Incri.css" />
+        <link rel="stylesheet" href="css/Form_Incri.css"/>
         <script src="Vérification.js"async></script>
 
         <title>BDE Arras</title>
