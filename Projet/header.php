@@ -26,7 +26,7 @@
             <li><a href="Index.php"> Acceuil </a></li>
             <li><a href="BoiteIdee.php"> Boite à idée </a></li>
             <li><a href="Evenements.php"> Evénements </a></li>
-            <li><a href=""> Boutique </a></li>
+            <li><a href="Boutique.php"> Boutique </a></li>
         </ul>	
     </div> 
 	
