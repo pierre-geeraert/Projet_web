@@ -14,6 +14,7 @@
   box-shadow: 0 15px 35px #3232321a,0 5px 15px #0000001a;
   transition: transform 0.3s;
   transform: translate3d(0, -1px, 0);
+  
 }
 
 .item:hover  {
@@ -43,14 +44,14 @@
 }
 
 .items {
-  position: relative;
+	position: relative;
 }
 
 /**
 CAROUSEL
  */
 .carousel {
-  position: relative;
+	position: relative;
 }
 
 .carousel__container {
@@ -124,7 +125,7 @@ CAROUSEL
   transform: scale(1.4);
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 500px){
   .carousel__pagination {
     display: block;
   }

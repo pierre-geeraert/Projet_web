@@ -28,7 +28,7 @@ font-style: normal;
 	 float: right;
 }
 .element_header li:hover{
-    background-color: rgb(150, 36, 23)
+    background-color: rgb(150, 36, 23);
 }
 
 .element_header a {
@@ -46,6 +46,59 @@ font-style: normal;
     overflow: hidden;
     background-color: #C2242A;
 }
+
+.even1 {
+	margin: 2%;
+	margin-left: calc(48% - 350px);
+}
+.even_individuel {
+	margin: 2%;
+}
+
+.even1 a:hover{
+	color: white;
+}
+
+.ballon {
+	float: left;
+	width: 15%;
+	margin-right: 5%;	
+}
+
+.description {
+	float: left;
+	width: 80%;
+}
+
+
+.even2 {
+	margin: 2%;
+	margin-left: calc(48% - 350px);
+}
+
+.even2 a:hover{
+	color: white;
+}
+
+.inner2 {
+	float: left;	
+}
+
+.inner:hover {
+	background-color: #8A1002;
+}
+
+fieldset
+{
+  box-shadow: 6px 6px 0px #2b2b2b;
+  border:2px solid black;
+  -moz-border-radius:8px;	
+  border-radius:8px;
+  background-color:#C2242A;
+  max-width:700px;
+  padding:16px;	
+}
+
 
 .element_header2 li {
 	 display: inline;
@@ -68,6 +121,7 @@ font-style: normal;
 .element_header_photo img { 
 	margin: 0% 1%; 
 }
+
 
 .footer {
 	/*position: absolute;
@@ -97,3 +151,32 @@ html, body {
 	position: absolute;
 	float: left;
 }
+
+
+.element_header_logout {
+	float: right;
+	color: white;
+}
+.element_header_logout :hover{
+    background-color: rgb(150, 36, 23);
+}
+
+#menu {
+float: left;
+}
+#menu li a:hover {
+ background-color: rgb(150, 36, 23);
+ }
+#menu ul li ul {
+ display:none;
+ }
+#menu ul li:hover ul {
+ display:block;
+ }
+#menu li:hover ul li {
+ float:none;
+ background-color: rgb(150, 36, 23);
+ }
+#menu li ul {
+ position:absolute;
+ }

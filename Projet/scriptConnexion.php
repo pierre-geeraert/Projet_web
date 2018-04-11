@@ -7,7 +7,7 @@ $pass = $_POST['motdepasse'];
 
 //  Récupération de l'utilisateur et de son pass hashé
 
-$req = $bdd->prepare('SELECT idUsers, Mdp FROM utilisateurs WHERE Email = :login');
+$req = $bdd->prepare('SELECT name, surname, password FROM users WHERE email = :login');
 $req->execute(array(':login' => $login));
 $resultat = $req->fetch();
 
@@ -20,12 +20,15 @@ if (!$resultat)
 else
 
 {
-    if ($pass === $resultat['Mdp']) {
+    if ($pass === $resultat['password']) {
 
         session_start();
-        $_SESSION['idUsers'] = $resultat['idUsers'];
-        $_SESSION['Mdp'] = $login;
+		$_SESSION['name'] = $resultat['name'];
+		$_SESSION['surname'] = $resultat['surname'];
+        $_SESSION['login'] = $login;
+        $_SESSION['mdp'] = $pass;
         echo 'Vous êtes connecté !';
+		header('location: index.php');
 
     }
 
