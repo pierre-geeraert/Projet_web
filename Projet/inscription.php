@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="css/style.css"/>
         <link rel="stylesheet" href="css/Form_Incri.css"/>
         <script src="Vérification.js"async></script>
-
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>BDE Arras</title>
     </head>
 

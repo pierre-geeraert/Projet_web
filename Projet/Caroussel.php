@@ -1,130 +1,32 @@
-<!DOCTYPE html>
+<!Doctype html>
 <html>
-
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" href="css/style.css"/>
-  <script src="main.js"async></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 </head>
-
-<body>
+<body >
     
- 
 
+    
+    <h1>Photo différent evènements</h1>
 
-
-
-  <div class="container">
-    <div class="title">Photo de différents évenements</div>
-
-    <div id="carousel1">
-
-      <div class="item">
-        <div class="item__image">
-          <img src="image/1.jpg" alt="">
-        </div>
-        <div class="item__body">
-          <div class="item__title">
-            Mon titre 1
-          </div>
-          <div class="item__description">
-            Ici une petite description pour tester le carousel
-          </div>
-        </div>
-      </div>
-      
-
-      <div class="item">
-        <div class="item__image">
-          <img src="image/2.jpg" alt="">
-        </div>
-        <div class="item__body">
-          <div class="item__title">
-            Mon titre 2
-          </div>
-          <div class="item__description">
-            Ici une petite description pour tester le carousel
-          </div>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="item__image">
-          <img src="image/3.jpg" alt="">
-        </div>
-        <div class="item__body">
-          <div class="item__title">
-            Mon titre 3
-          </div>
-          <div class="item__description">
-            Ici une petite description pour tester le carousel
-          </div>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="item__image">
-          <img src="image/4.jpg" alt="">
-        </div>
-        <div class="item__body">
-          <div class="item__title">
-            Mon titre 4
-          </div>
-          <div class="item__description">
-            Ici une petite description pour tester le carousel
-          </div>
-        </div>
-      </div>
-
-      <div class="item">
-          <div class="item__image">
-              <img src="image/5.jpg" alt="">
-            </div>
-        <div class="item__body">
-          <div class="item__title">
-            Mon titre 5
-          </div>
-          <div class="item__description">
-            Ici une petite description pour tester le carousel
-          </div>
-        </div>
-      </div>
-      
-      <div class="item">
-          <div class="item__image">
-            <img src="image/6.jpg" alt="">
-          </div>
-          <div class="item__body">
-            <div class="item__title">
-              Mon titre 6
-            </div>
-            <div class="item__description">
-              Ici une petite description pour tester le carousel
-            </div>
-          </div>
-        </div>
-
-        <div class="item">
-            <div class="item__image">
-              <img src="image/7.jpg" alt="">
-            </div>
-            <div class="item__body">
-              <div class="item__title">
-                Mon titre 7
-              </div>
-              <div class="item__description">
-                Ici une petite description pour tester le carousel
-              </div>
-            </div>
-          </div>
-
+    <!-- Flickity HTML init -->
+    <div class="carousel" data-flickity='{ "autoPlay": true,"wraparound":true}'>
+      <div class="carousel-cell"> <img src="image/tapis.png"></div>
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
     </div>
-    
-    
-  </div>
-
+</div>
 </body>
-
 </html>
+
+
+
+

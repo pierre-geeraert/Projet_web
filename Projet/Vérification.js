@@ -10,6 +10,7 @@ var patt = new RegExp (/[A-Z](?=(.*[a-z]){1,})(?=(.*[0-9]){1,})/);
     alert("Bon MDP");
     
     
+    
    }
    else
    {

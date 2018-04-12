@@ -12,6 +12,7 @@
         <meta charset="utf-8" />
         <link rel="stylesheet" href="css/style.css" />
         <link rel="stylesheet" href="css/Boutique.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title>BDE Arras</title>
     </head>
@@ -24,6 +25,8 @@
     </header>
     <body>
 
+
+  <div class="Meilleurs ventes">
 <p id="BESTSELL">Meilleurs ventes :</p>
 
         <div class="flex-container">
@@ -33,16 +36,16 @@
     <!-- Article 1-->
     <div class="wrapper3">
     <div class="product-img">
-      <img src="http://bit.ly/2tMBBTd">
+      <img src="">
     </div>
     <div class="product-info">
       <div class="product-text">
-        <h1>Tapis</h1>
-        
-        <p>Harvest Vases are a reinterpretation<br> of peeled fruits and vegetables as<br> functional objects. The surfaces<br> appear to be sliced and pulled aside,<br> allowing room for growth. </p>
+        <h1>Titre article</h1>
+        <p> Description </p>
+      
       </div>
       <div class="product-price-btn">
-        <p><span>78</span>$</p>
+        <p><span>Prix</span>$</p>
         <button type="button">buy now</button>
       </div>
     </div>
@@ -50,43 +53,56 @@
 
     <!-- Article 2-->
         
-    <div class="wrapper3">
+    < <div class="wrapper3">
     <div class="product-img">
-      <img src="http://bit.ly/2tMBBTd">
+      <img src="">
     </div>
     <div class="product-info">
       <div class="product-text">
-        <h1>Tapis</h1>
-        
-        <p>Harvest Vases are a reinterpretation<br> of peeled fruits and vegetables as<br> functional objects. The surfaces<br> appear to be sliced and pulled aside,<br> allowing room for growth. </p>
+        <h1>Titre article</h1>
+        <p> Description </p>
+      
       </div>
       <div class="product-price-btn">
-        <p><span>78</span>$</p>
+        <p><span>Prix</span>$</p>
         <button type="button">buy now</button>
       </div>
     </div>
   </div>
+
 
   
     <!-- Article 3-->
-  <div class="wrapper3">
-    <div class="product-img" style="background-image: url(https://image.darty.com/accessoires/autre_accessoire_informatique/tapis_souris/steelseries_tapis_steelseries_qck_s1509041155261A_155109751.png)"></div>
+    <div class="wrapper3">
+    <div class="product-img">
+      <img src="">
+    </div>
     <div class="product-info">
       <div class="product-text">
-        <h1>Tapis</h1>
-        
-        <p>Harvest Vases are a reinterpretation<br> of peeled fruits and vegetables as<br> functional objects. The surfaces<br> appear to be sliced and pulled aside,<br> allowing room for growth. </p>
+        <h1>Titre article</h1>
+        <p> Description </p>
+      
       </div>
       <div class="product-price-btn">
-        <p><span>78</span>$</p>
+        <p><span>Prix</span>$</p>
         <button type="button">buy now</button>
       </div>
     </div>
   </div>
+
 </div>
-</body>
+
+<div id="Produits en vente">
+
+<p id="BESTSELL">Meilleurs ventes :</p>
 
 
+
+
+
+
+
+</div>
 
 
 
