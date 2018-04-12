@@ -91,6 +91,7 @@
   </div>
 
 </div>
+<<<<<<< HEAD
 
 <div id="Produits en vente">
 
@@ -116,4 +117,10 @@
 
 
 	
+=======
+</body>
+<footer>
+<?php include("footer.php"); ?>
+</footer>
+>>>>>>> 822278c0bf8b9e7d994c7846a28a2123c691e805
 </html>

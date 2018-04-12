@@ -2,7 +2,10 @@
 
 function verifMotdepasse(champ)
 {
-var patt = new RegExp (/[A-Z](?=(.*[a-z]){1,})(?=(.*[0-9]){1,})/);
+var patt = new RegExp (/(?=(.*[a-z]){1,})(?=(.*[A-Z]){1,})(?=(.*[0-9]){1,})([a-zA-Z0-9]{8,}).*/);
+
+
+
 
    if(patt.test(champ.value))
    {

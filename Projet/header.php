@@ -1,6 +1,5 @@
 <?php
-session_start();
- $_SESSION['login'] = null; // On démarre la session AVANT toute chose
+if (!isset($_SESSION)) { session_start(); }
 ?>
 
 <nav id="header">   
@@ -9,7 +8,7 @@ session_start();
 if ($_SESSION['login'] != null)
 {
 echo'   <div class="element_header">
-        <ul>
+		<ul>
 				<div id="menu">
 					<ul>
 						  <li><a href="#"> '.$_SESSION['surname'].' '.$_SESSION['name'].' </a>
@@ -26,9 +25,8 @@ echo'   <div class="element_header">
 			<div class="element_header_logout">
 				<a href="deconnexion.php"> Deconnexion </a>
 			</div>
-        </ul>
-
-    </div>'; 
+		</ul>
+		</div>'; 
 }
 else
 {
