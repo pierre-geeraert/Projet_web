@@ -14,7 +14,17 @@ font-style: normal;
 
 /* Header */
 
+.ballon {
+	float: left;
+	width: 15%;
+	margin-right: 5%;	
+	margin-bottom: 1%;	
+}
 
+.description {
+	float: left;
+	width: 80%;
+}
 
 .element_header ul {
     list-style-type: none;
@@ -59,18 +69,6 @@ font-style: normal;
 .even1 a:hover{
 	color: white;
 }
-
-.ballon {
-	float: left;
-	width: 15%;
-	margin-right: 5%;	
-}
-
-.description {
-	float: left;
-	width: 80%;
-}
-
 
 .even2 {
 	margin: 2%;
@@ -150,18 +148,14 @@ html, body {
 
 .wrapper2 {
 	position: absolute;
-
-    float: left;
-    
+    float: left;   
 }
-
-
-
 
 .element_header_logout {
 	float: right;
 	color: white;
 }
+
 .element_header_logout :hover{
     background-color: rgb(150, 36, 23);
 }

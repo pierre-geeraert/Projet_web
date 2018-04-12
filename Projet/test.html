@@ -1,22 +1,32 @@
 <!doctype html>
-<html>
-	<head>
-		<title>Jean clément Podevin</title> 
-		<meta charset="utf-8">
-		<link rel="stylesheet" href="css/style.css"/>
-		
-	</head>
-
-
-    <body>
-<div class="container">
-    <div>
-        <p>Bonjour</p>
-        <p>Ca marchdddde</p>
-
-    </div>
-   
-
-</div>
-    </body>
-</html>
+<title>Example</title>
+<style>
+.grid { 
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+  align-items: start;
+  justify-items: center;
+  }
+.grid img {
+  border: 1px solid rgba(0,0,0,0.3);
+  box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.3);
+  max-width: 100%;
+}
+.grid img:nth-child(2) {
+  grid-column: span 3;
+  grid-row: span 2;
+  }
+</style>
+<main class="grid">
+  <img src="image/1.jpg" alt="Sample photo">
+  <img src="image/1.jpg" alt="Sample photo">
+  <img src="image/1.jpg" alt="Sample photo">
+  <img src="image/1.jpg" alt="Sample photo">
+  <img src="image/1.jpg" alt="Sample photo">
+  <img src="image/1.jpg" alt="Sample photo">
+  <img src="image/1.jpg" alt="Sample photo">
+  <img src="image/1.jpg" alt="Sample photo">
+  <img src="/pix/samples/28m.jpg" alt="Sample photo">
+  <img src="/pix/samples/26m.jpg" alt="Sample photo">
+</main>

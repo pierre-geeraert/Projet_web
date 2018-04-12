@@ -23,18 +23,24 @@
 	<div class="wrapper">
 		<div class="even_individuel">
 
-			<h3>FOOT le 26 avril</h3>
+			<h3>FOOT du 15 janvier</h3>
 						
 			<ul>
 				<fieldset>
 								
 					<img class="ballon" src="image/foot.png">
 					<p class="description">
-						La sortie aura lieu au City Stade des Hochettes, situé dans la commune Arras. 
+						La sortie a eu lieu au City Stade des Hochettes. 
 					</p>
 									
 				</fieldset>
 				
+			</ul>
+			<ul>
+				<form method="post" action="img.php" enctype="multipart/form-data">
+				<input type="file" name="image" />
+				<input type="submit" name="submit" value="Envoyer" />
+				</form>
 			</ul>
 
 	</div>

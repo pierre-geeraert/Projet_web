@@ -10,7 +10,8 @@
 
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title>BDE Arras</title>
     </head>
@@ -30,7 +31,7 @@
 						<ul>
 							<fieldset>
 							
-								<a href="even1.php"> > FOOT < </a>
+								<a href="current_event1.php"> > FOOT < </a>
 								
 								<fieldset class="inner">
 								
@@ -69,7 +70,7 @@
 					
 						<ul>
 							<fieldset>
-								<a href="Index.php"> > FOOT < </a>
+								<a href="event_finish1.php"> > FOOT < </a>
 								<fieldset class="inner">
 									<p class="description">
 										Partie de foot

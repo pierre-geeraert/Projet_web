@@ -1,118 +1,59 @@
+/* external css: flickity.css */
 
-.title {
-  font-size: 25px;
-  color: black;
-  font-weight: bold;
-  margin-bottom: 25px;
+* { box-sizing: border-box; }
+
+#Carou{
+  /*position:absolute;
+    left: 50%;
+    top: 50%;
+    width: 200px;
+    height: 200px;
+    margin-left: -100px; 
+    margin-top: -100px; */
 }
 
-.item {
-  margin: 40px 10px;
-  background-color: #fff;
-  box-shadow: 0 15px 35px #3232321a,0 5px 15px #0000001a;
-  transition: transform 0.3s;
-  transform: translate3d(0, -1px, 0);
-  
-}
-
-.item:hover  {
-  transform: translate3d(0, -10px, 0);
-}
-
-.item img {
-  display: block;
-  width:400px;
-  height:400px;
-  margin: auto;
-}
-
-.item__body {
-  padding: 25px;
-  
-}
-
-.item__title {
-  font-size: 24px;
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #232323;
-}
-
-.item__description {
-  color: #585858;
-}
-
-.items {
-	position: relative;
-}
-
-/**
-CAROUSEL
- */
 .carousel {
-	position: relative;
+  background: #EEE;
+  margin-top: 100px;
+  
+}
+h1{
+  margin-top: 100px;
 }
 
-.carousel__container {
-  transition: transform 0.3s;
-  transform: translate3d(0, 0, 0);
+.carousel-cell {
+  width: 100%;
+  height: 400px;
+  margin-right: 10px;
+  background: #C2242A;
+  border-radius: 5px;
+  counter-increment:carousel-cell;
+  border-style : groove;
+  border-color: #8A1002;
+}
+
+
+.carousel-cell:before {
+  display: block;
+  text-align: center;
  
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
 }
-
-
-
-.carousel__item {
-  float: left;
-  height: 500px;
-  width: 500px;
- 
-}
-
-.carousel__next, .carousel__prev {
-  position: absolute;
+.flickity-page-dots .dot {
+  height: 4px;
   width: 40px;
-  height: 40px;
-  background: #FFF url(right.svg) center center no-repeat;
-  background-size:  20px 20px;
-  border-radius: 50%;
-  top: -20%;
-  margin-top: 200px;
-  right: 20px;
-  box-shadow: 0 15px 35px #3232321a,0 5px 15px #0000001a;
-  cursor: pointer;
-  transition: transform 0.3s, opacity 0.3s;
-
+  margin: 0;
+  border-radius: 0;
 }
 
-
-.carousel__prev {
-  background-image: url(left.svg);
-  right: auto;
-  left: -20px;
+.flickity-page-dots {
+  bottom: -22px;
 }
 
-
-
-
-.carousel__pagination__button {
-  background-color: #fff;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  display: inline-block;
-  margin: 0 3px;
-  box-shadow: 0 2px 5px #3232321a;
-  transition: transform 0.3s;
-  cursor: pointer;
+.carousel-cell img{
+  width: 100%;
+  height: 100%;
+  border
 }
-
-.carousel__pagination__button--active, .carousel__pagination__button:hover {
-  transform: scale(1.4);
-}
-
-@media screen and (min-width: 500px){
-  .carousel__pagination {
-    display: block;
-  }
-}
-

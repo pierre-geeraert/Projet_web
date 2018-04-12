@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 
 <!--####################################
  Auteur : Groupe 3
@@ -11,6 +11,8 @@
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/BoiteIdee.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title>BDE Arras</title>
     </head>
@@ -24,10 +26,46 @@
     <body>
 	<div class="wrapper">
 
-    <section>
+    <div class="wrapper2">
+   
+  <div class="a">
+  <div class="form-style-6">
+<h1>Quel est votre idée</h1>
+<form>
+<input type="text" name="field1" placeholder="Ton nom" />
+<input name="field3" placeholder="Description de l'idée"/> 
+<input type="submit" value="Envoyer" />
+</form>
+</div>
+  </div>
+  <div class="b">
+
+  <div class="form-style-6">
+<h1>Quel est votre idée</h1>
+<form>
+<input type="text" name="field1" placeholder="Ton nom" />
+<input name="field3" placeholder="Description de l'idée"/> 
+<input type="submit" value="Envoyer" />
+</form>
+</div>
+  </div>
+
+ <div class="c">
+
+<div class="form-style-6">
+<h1>Quel est votre idée</h1>
+<form>
+<input type="text" name="field1" placeholder="Ton nom" />
+<input name="field3" placeholder="Description de l'idée"/> 
+<input type="submit" value="Envoyer" />
+</form>
+</div>
+</div>
+
+    
+    
 	
 	
-	</section>
     </div>
     </body>
 	
@@ -38,3 +76,4 @@
 	</footer>
 
 </html>
+
