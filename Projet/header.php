@@ -1,5 +1,6 @@
 <?php
-session_start(); // On démarre la session AVANT toute chose
+session_start();
+ $_SESSION['login'] = null; // On démarre la session AVANT toute chose
 ?>
 
 <nav id="header">   
