@@ -129,7 +129,7 @@ fieldset
 	margin-top: 10%;
 	background: #2b2b2b;
 	color: white;
-	padding: 1px;
+	padding: 1%;
 }
 
 /* Corps du site */
@@ -150,7 +150,6 @@ html, body {
 	position: absolute;
     float: left;   
 }
-
 
 .element_header_logout {
 	float: right;
@@ -180,4 +179,3 @@ float: left;
 #menu li ul {
  position:absolute;
  }
->>>>>>> e765893555fd07c53d5c9d2d7c84b4926301c51b
