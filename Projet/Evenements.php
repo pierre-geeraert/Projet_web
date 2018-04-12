@@ -30,7 +30,7 @@
 						<ul>
 							<fieldset>
 							
-								<a href="even1.php"> > FOOT < </a>
+								<a href="current_event1.php"> > FOOT < </a>
 								
 								<fieldset class="inner">
 								
@@ -69,7 +69,7 @@
 					
 						<ul>
 							<fieldset>
-								<a href="Index.php"> > FOOT < </a>
+								<a href="event_finish1.php"> > FOOT < </a>
 								<fieldset class="inner">
 									<p class="description">
 										Partie de foot
