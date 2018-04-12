@@ -29,6 +29,7 @@
 					
 					
 					$requete->execute();
+					header('location: connexion.php');
 						
  
 			}		
