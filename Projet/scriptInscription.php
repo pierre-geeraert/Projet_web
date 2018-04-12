@@ -7,7 +7,9 @@
 			$Statut = $_POST['Statut'];
 
 
-			$requete1 = $bdd->prepare("SELECT * FROM utilisateurs WHERE Email = :Email");
+			$requete1 = $bdd->prepare("SELECT * FROM users WHERE email = :Email");
+			//$requete1 = $bdd->prepare("call test_email(:Email)");
+
 			$requete1->bindValue(':Email', $Email, PDO::PARAM_STR);
 			
 			$requete1->execute();
@@ -18,7 +20,7 @@
 
 					echo("Compte crée avec succès!");
 
-					$requete = $bdd->prepare("INSERT INTO utilisateurs (Nom, Prenom, Mdp, Email, Statut) VALUES(:Nom, :Prenom, :Mdp, :Email, :Statut)");
+					$requete = $bdd->prepare("call register(:Nom, :Prenom, :Email, :Mdp, :Statut)");
 					$requete->bindValue(':Nom', $Nom, PDO::PARAM_STR);
 					$requete->bindValue(':Prenom', $Prenom, PDO::PARAM_STR);
 					$requete->bindValue(':Mdp', $Mdp, PDO::PARAM_STR);
