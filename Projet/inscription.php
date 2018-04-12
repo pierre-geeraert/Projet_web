@@ -50,8 +50,15 @@
                                     <input id="Mdp" class="champ" name="Mdp" required="required" type="password"  placeholder="Mdp" onBlur="verifMotdepasse(this)"/>
                         </p>
                         <p> 
-                                    <label for="statutsignup" class="uname"  > </label>
-                                    <input id="Statut" class="champ" name="Statut" required="required" type="text" placeholder="Statut" />
+                            <select id="Statut" class="champ" name="Statut" required="required" type="text" placeholder="Statut">
+
+                                <option>BDE</option>
+
+                                <option>Etudiant</option>
+
+                                <option>Tuteur</option>
+
+                            </select>
 						</p>
                                 
 						<p class="signin button"> 
