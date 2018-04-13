@@ -25,9 +25,9 @@
 	 
 	<div class="wrapper">
 
-    
-
     <?php include("Caroussel.php"); ?>
+
+  
 
     </div>
     </body>
