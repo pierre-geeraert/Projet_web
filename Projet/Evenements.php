@@ -50,10 +50,8 @@
 												
 												<fieldset class="inner">
 												
-													<p class="description">
-														'.${'description'.$var}.'
-														
-													</p>
+													<p class="description"> '.${'description'.$var}.' </p>
+													
 															<form id="'.$var.'" action="participate.php" method="post">
 																<input type="hidden" name="'.$var.'" value="'.${'id'.$var}.'"/>
 																<input type="hidden" name="nbr_event" value="'.$nbr_event.'"/>
@@ -87,11 +85,17 @@
 							}
 							
 							for($var=1; $var <= $nbr_event; $var++){
+									$id_form = 'id'.$var;
 									echo '
 										<ul>
 											<fieldset>
 											
-												<p> > '.${'event'.$var}.' '.${'id'.$var}.' < </p>
+												<form id="'.$id_form.'" action="script_event.php" method="post">
+													<input type="hidden" name="'.$var.'" value="'.${'id'.$var}.'"/>
+													<input type="hidden" name="nbr_event" value="'.$nbr_event.'"/>
+												</form> 
+												
+												<a class="event "href=\'#\' onclick=\'document.getElementById("'.$id_form.'").submit()\'> '.${'event'.$var}.' </a>
 												
 												<fieldset class="inner">
 												
