@@ -23,11 +23,12 @@
 	<?php include("header.php"); ?>
 
     </header>
-    <body>
+	
+<body>
 	<div class="wrapper">
 
     <div class="wrapper2">
-   
+<!--
   <div class="a">
   <div class="form-style-6">
 <h1>Quel est votre idée</h1>
@@ -43,7 +44,7 @@
   <div class="form-style-6">
 <h1>Quel est votre idée</h1>
 <form>
-<input type="text" name="field1" placeholder="Ton nom" />
+<input type="text" name="field1" placeholder="Ton ndom" />
 <input name="field3" placeholder="Description de l'idée"/> 
 <input type="submit" value="Envoyer" />
 </form>
@@ -51,7 +52,8 @@
   </div>
 
  <div class="c">
-
+<<<<<<< HEAD
+-->
 <div class="form-style-6">
 <h1>Quel est votre idée</h1>
 <form>
@@ -60,20 +62,27 @@
 <input type="submit" value="Envoyer" />
 </form>
 </div>
-</div>
+
+    </div>
 
     
     
+=======
+
+  
+>>>>>>> master
 	
 	
     </div>
-    </body>
+</div>
+</div>
+</body>
 	
-	<footer>
+<footer>
 	
-	<?php include("footer.php"); ?>
+<?php include("footer.php"); ?>
 	
-	</footer>
+</footer>
 
 </html>
 

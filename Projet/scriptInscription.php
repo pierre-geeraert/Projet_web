@@ -33,31 +33,12 @@
 
 
                         $requete->execute();
-
+                        header('location: connexion.php');
                     }catch(PDOException $e) {
                     	echo($e->getMessage());
-					}
+                    	}
 			}
-<<<<<<< HEAD
-			else{
 
-					echo("Compte crée avec succès!");
 
-					$requete = $bdd->prepare("call register(:Nom, :Prenom, :Email, :Mdp, :Statut)");
-					$requete->bindValue(':Nom', $Nom, PDO::PARAM_STR);
-					$requete->bindValue(':Prenom', $Prenom, PDO::PARAM_STR);
-					$requete->bindValue(':Mdp', $Mdp, PDO::PARAM_STR);
-					$requete->bindValue(':Email', $Email, PDO::PARAM_STR);
-					$requete->bindValue(':Statut', $Statut, PDO::PARAM_STR);
-					
-					
-					$requete->execute();
-					header('location: connexion.php');
-						
- 
-			}		
-			
-				
-=======
->>>>>>> 56276eebb5a86ecd8110eb6d635026559b46ba4c
+
 ?>

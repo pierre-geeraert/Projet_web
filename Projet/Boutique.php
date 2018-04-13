@@ -105,7 +105,10 @@ $bdd = new PDO('mysql:host=mysql-pi-ux-ce.alwaysdata.net;dbname=pi-ux-ce_web;cha
   </div>
 
 </div>
+<<<<<<< HEAD
+=======
 
+>>>>>>> 5c820e36c690843b6ffa7a92e1cf47f43dc0cdfc
 
 <div id="Produits en vente">
 
@@ -133,6 +136,8 @@ $bdd = new PDO('mysql:host=mysql-pi-ux-ce.alwaysdata.net;dbname=pi-ux-ce_web;cha
     </div>
   </div>
 
+<<<<<<< HEAD
+=======
  <!--Article 2 -->
 
 <div class="wrapper3">
@@ -172,9 +177,12 @@ $bdd = new PDO('mysql:host=mysql-pi-ux-ce.alwaysdata.net;dbname=pi-ux-ce_web;cha
     </div>
   </div>
 
+>>>>>>> 5c820e36c690843b6ffa7a92e1cf47f43dc0cdfc
 </div>
 </div>
 
+<<<<<<< HEAD
+=======
 
 
 
@@ -187,9 +195,13 @@ $bdd = new PDO('mysql:host=mysql-pi-ux-ce.alwaysdata.net;dbname=pi-ux-ce_web;cha
 
 	
 
+>>>>>>> 5c820e36c690843b6ffa7a92e1cf47f43dc0cdfc
 </body>
 <footer>
 <?php include("footer.php"); ?>
 </footer>
+<<<<<<< HEAD
+=======
 
+>>>>>>> 5c820e36c690843b6ffa7a92e1cf47f43dc0cdfc
 </html>
