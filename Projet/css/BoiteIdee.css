@@ -1,5 +1,5 @@
 
-
+/*
 .wrapper3 {
     display: grid;
 grid-gap: 10px;
@@ -8,13 +8,14 @@ grid-gap: 10px;
     background-color: #fff;
     color: #444;
 }
-
+*/
 
 
 .a {
     grid-column: col1-start / col3-start;
     grid-row: row1-start ;
 }
+/*
 .b {
     grid-column: col3-start ;
     grid-row: row1-start / row2-end;
@@ -26,14 +27,19 @@ grid-gap: 10px;
 .d {
     grid-column: col2-start ;
     grid-row: row2-start ;
-}
 
+}
+*/
 .form-style-6{
     font: 95% Arial, Helvetica, sans-serif;
     max-width: 400px;
     margin: 10px auto;
     padding: 16px;
     background: #F7F7F7;
+    text-align:center;
+
+
+
 }
 .form-style-6 h1{
     background: #8A1002;;
@@ -60,7 +66,7 @@ input[name="field3"]
     font: 95% Arial, Helvetica, sans-serif;
 }
  input[type="text"]:focus,
-input[type="email"]:focus,
+input[type="email"]:focus
  
 {
     box-shadow: 0 0 5px #43D1AF;
