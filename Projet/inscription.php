@@ -12,7 +12,8 @@
         <meta charset="utf-8" />
         <link rel="stylesheet" href="css/style.css"/>
         <link rel="stylesheet" href="css/Form_Incri.css"/>
-        <script src="Vérification.js"async></script>
+        <script src="Password.js"async></script>
+        <script src="Verify.js"async></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>BDE Arras</title>
     </head>
@@ -47,8 +48,16 @@
                         
 						<p> 
                                     <label for="passwordsignup" class="youpasswd"  > </label>
-                                    <input id="Mdp" class="champ" name="Mdp" required="required" type="password"  placeholder="Mdp" onBlur="verifMotdepasse(this)"/>
+                                
+                                    <input id="Mdp" class="champ" name="Mdp" required="required" type="password"  placeholder="Mdp" >
                         </p>
+                                     <div id="message">
+                                    <h3>Le mot de passe doit contenir:</h3>
+                                    <p id="letter" class="invalid">Une <b>minuscule</b></p>
+                                    <p id="capital" class="invalid">Une <b>majuscule</b> </p>
+                                    <p id="number" class="invalid">Un<b>nombre</b></p>
+                                    <p id="length" class="invalid">Minimum <b>8 caractères</b></p>
+                                        </div>
                         <p> 
                             <select id="Statut" class="champ" name="Statut" required="required" type="text" placeholder="Statut">
 
@@ -61,7 +70,7 @@
                             </select>
 						</p>
                                 
-						<p class="signin button"> 
+						<p class="signin_button"> 
                                     <input type="submit" value="S'inscrire"/> 
 						</p>
 						<p class="change_link">  
