@@ -102,6 +102,12 @@
 													<p class="description">
 														'.${'description'.$var}.'
 													</p>
+													<ul>
+														<form method="post" action="img.php" enctype="multipart/form-data">
+														<input type="file" name="image" />
+														<input type="submit" name="submit" value="Envoyer" />
+														</form>
+													</ul>
 													
 												</fieldset>
 

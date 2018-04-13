@@ -54,7 +54,8 @@ for($var=1; $var <= $nbr_url; $var++){
 							<input type="hidden" name="nbr_url" value="'.$nbr_url.'"/>
 						</form> 
 						
-						<a class="participate "href=\'#\' onclick=\'document.getElementById("'.$picture_var.'").submit()\'> Liker la photo ('.$nbr_like.') </a>
+						<a href=\'#\' onclick=\'document.getElementById("'.$picture_var.'").submit()\'> Liker la photo ('.$nbr_like.') </a>
+						<a href="comment.php"> Commenter </a>
 						
 															
 					</ul>
