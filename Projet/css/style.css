@@ -141,6 +141,12 @@ html, body {
  
 }
 
+.participate {
+	margin-left: 40%;
+	width: 20%;
+	margin-bottom: 0; 
+}
+
 .wrapper {
 	min-height: calc(100% - 294px);
 	position: relative;

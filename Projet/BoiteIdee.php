@@ -23,7 +23,8 @@
 	<?php include("header.php"); ?>
 
     </header>
-    <body>
+	
+<body>
 	<div class="wrapper">
 
     <div class="wrapper2">
@@ -51,6 +52,7 @@
   </div>
 
  <div class="c">
+<<<<<<< HEAD
 -->
 <div class="form-style-6">
 <h1>Quel est votre idée</h1>
@@ -65,16 +67,22 @@
 
     
     
+=======
+
+  
+>>>>>>> master
 	
 	
     </div>
-    </body>
+</div>
+</div>
+</body>
 	
-	<footer>
+<footer>
 	
-	<?php include("footer.php"); ?>
+<?php include("footer.php"); ?>
 	
-	</footer>
+</footer>
 
 </html>
 
