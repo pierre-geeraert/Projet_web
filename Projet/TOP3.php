@@ -1,13 +1,14 @@
-
-
 <?php
+    require_once('database.php');
 
-include_once('BDD.php');
+    // JUSTE POUR LE DEBUGAGE , TU PEUX L'ENLEVER APRES
+  
 
-$bdd->prepare('SELECT * FROM products' );
-$bdd->execute();
-$result=$bdd->fetchall();
+    $db = new Database;
 
-var_dump($result);
-echo json_encode($result);
+    $db->query("SELECT * FROM products");
+    $products = $db->fetchAll();
+    $db->closeCursor();
 
+    echo json_encode($products);
+    

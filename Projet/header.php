@@ -42,8 +42,8 @@ echo'   <div class="element_header">
 ?>
     <div class="element_header_photo">
         <ul>
-			<img src="image/Cesi.png" width="10%">
-			<img src="image/bde.jpg" width="5%">
+			<img src="/image/Cesi.png" width="10%">
+			<img src="/image/bde.jpg" width="5%">
         </ul>	
     </div> 	
 

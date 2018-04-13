@@ -20,7 +20,8 @@ $bdd = new PDO('mysql:host=mysql-pi-ux-ce.alwaysdata.net;dbname=pi-ux-ce_web;cha
         <link rel="stylesheet" href="css/Boutique.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-       
+        <script type="text/javascript" src="boutique.js"></script>
+
         <title>BDE Arras</title>
 
     </head>
@@ -39,9 +40,7 @@ $bdd = new PDO('mysql:host=mysql-pi-ux-ce.alwaysdata.net;dbname=pi-ux-ce_web;cha
   <div class="Meilleurs ventes">
 <p id="BESTSELL">Meilleurs ventes :</p>
 
-<?php
-// php code that generates the products
-?>
+
 
 
         <div class="flex-container">
@@ -55,12 +54,12 @@ $bdd = new PDO('mysql:host=mysql-pi-ux-ce.alwaysdata.net;dbname=pi-ux-ce_web;cha
     </div>
     <div class="product-info">
       <div class="product-text">
-        <h1> <?php echo $nomTop1 ?></h1>
-        <p> <?php echo $DescriTop1 ?> </p>
+        <h1> </h1>
+        <p>  </p>
       
       </div>
       <div class="product-price-btn">
-        <p> <?php echo $Price1 ?>$</p>
+        <p> $</p>
         <button type="button">buy now</button>
       </div>
     </div>
@@ -74,12 +73,12 @@ $bdd = new PDO('mysql:host=mysql-pi-ux-ce.alwaysdata.net;dbname=pi-ux-ce_web;cha
     </div>
     <div class="product-info">
       <div class="product-text">
-        <h1>Titre article</h1>
-        <p> Description </p>
+        <h1 id="name1">Titre article</h1>
+        <p id="description1"> Description </p>
       
       </div>
       <div class="product-price-btn">
-        <p><span>Prix</span>$</p>
+        <p id="price1">$</p>
         <button type="button">buy now</button>
       </div>
     </div>
@@ -116,17 +115,7 @@ $bdd = new PDO('mysql:host=mysql-pi-ux-ce.alwaysdata.net;dbname=pi-ux-ce_web;cha
 
 <p id="BESTSELL">Produits en vente :</p>
 
-<?php>
-  $bdd ->prepare("SELECT * FROM `products`");
-  $bdd ->execute();
-  ($result=$bdd->fetch())
-  
-  
-  
-  
-  
-  
-?>
+
 <div class="flex-container">
 
   <!--Article 1 -->
