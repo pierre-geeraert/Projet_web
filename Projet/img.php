@@ -16,7 +16,6 @@ $nom = "image/photos/{$num}.{$extension_upload}";
 
 $resultat = move_uploaded_file($_FILES['image']['tmp_name'],$nom);
 
-
 if ($resultat) header('location: Evenements.php');
 
 ?>

@@ -1,17 +1,18 @@
 <?php
 if (!isset($_SESSION)) { session_start(); }
+
 ?>
 
 <nav id="header">   
      
 <?php
-if ($_SESSION['login'] != null)
+if (isset($_SESSION['login']))
 {
 echo'   <div class="element_header">
 		<ul>
 				<div id="menu">
 					<ul>
-						  <li><a href="#"> '.$_SESSION['surname'].' '.$_SESSION['name'].' </a>
+						  <li><a href="#"> '.$_SESSION['surname'].' '.$_SESSION['name'].' ('.$_SESSION['statut'].') </a>
 								<ul>
 								  <li><a href="#">Sous-item 1</a></li>
 								  <li><a href="#">Sous-item 2</a></li>
@@ -50,7 +51,7 @@ echo'   <div class="element_header">
         <ul>
             <li><a href="Index.php"> Acceuil </a></li>
             <li><a href="BoiteIdee.php"> Boite à idée </a></li>
-            <li><a href="Evenements.php"> Evénements </a></li>
+            <li><a href="Evenements.php"> Evénements du mois </a></li>
             <li><a href="Boutique.php"> Boutique </a></li>
         </ul>	
     </div> 
