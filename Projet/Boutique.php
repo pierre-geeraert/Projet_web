@@ -1,17 +1,3 @@
-<?php
-session_start();
-$bdd = new PDO('mysql:host=mysql-pi-ux-ce.alwaysdata.net;dbname=pi-ux-ce_web;charset=utf8', 'pi-ux-ce_web', 'cesi');
-?>
-
-
-<!DOCTYPE html>
-
-<!--####################################
- Auteur : Groupe 3
- Date : 2018
- Contexte : Projet Web Exia CESI
- #######################################-->
-
 <html>
 
     <head>
@@ -19,189 +5,113 @@ $bdd = new PDO('mysql:host=mysql-pi-ux-ce.alwaysdata.net;dbname=pi-ux-ce_web;cha
         <link rel="stylesheet" href="css/style.css" />
         <link rel="stylesheet" href="css/Boutique.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script type="text/javascript" src="boutique.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
         <title>BDE Arras</title>
 
     </head>
 
-    <!-- L'en-tête -->    
-    <header>
-	
-	<?php include("header.php"); ?>
-
-    </header>
     <body>
 
- <?php include'BDD.php' ?>
- <?php include'TOP3.php' ?>
+      <header>
+	      <?php include("header.php"); ?>
+      </header>
 
-  <div class="Meilleurs ventes">
-<p id="BESTSELL">Meilleurs ventes :</p>
+        <div class="best_sell">
+            <p id="BESTSELL">Meilleures ventes :</p>
+
+            <div class="flex-container" id="best">
+              <div class="wrapper3" v-for="t in best">
+                <div class="product-img">
+                  <img :src="`Images/Produits/${t.url}`">
+                </div>
+
+                <div class="product-info">
+                  
+                  <div class="product-text">
+                    <h1> {{t.name}} </h1>
+                    <p>  {{t.description}} </p>
+                  </div>
+
+                  <div class="product-price-btn">
+                    <p> {{t.price}} €</p>
+                    <button type="button">Acheter</button>
+                  </div>
+
+                </div>
+              </div>
+              
+              
+              <script>
+           var b = new Vue({
+          el: '#best',
+          data: {
+              best: [],
+          },
+
+          created: function () {
+            fetch('BestSell.php', {
+              method: 'GET',
+            }).then((res) => res.json())
+            .then((data) =>  this.best = data)
+            .catch((err)=>console.error(err))
+          }
+      })
+    </script>
+
+      </div>
 
 
+      <div class="shop_products">
+            <p id="BESTSELL">Liste des produits en vente :</p>
 
+            <div class="flex-container" id="prod">
+              <div class="wrapper3" v-for="p in prod">
+                <div class="product-img">
+                  <img :src="`Images/Produits/${p.url}`">
+                </div>
 
-        <div class="flex-container">
+                <div class="product-info">
+                  
+                  <div class="product-text">
+                    <h1> {{p.name}} </h1>
+                    <p>  {{p.description}} </p>
+                  </div>
 
-        
+                  <div class="product-price-btn">
+                    <p> {{p.price}} €</p>
+                    <button type="button">Acheter</button>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>  
             
-    <!-- Article 1-->
-    <div class="wrapper3">
-    <div class="product-img">
-      <img src="">
-    </div>
-    <div class="product-info">
-      <div class="product-text">
-        <h1> </h1>
-        <p>  </p>
+            
       
-      </div>
-      <div class="product-price-btn">
-        <p> $</p>
-        <button type="button">buy now</button>
-      </div>
-    </div>
-  </div>
 
-    <!-- Article 2-->
-        
-    < <div class="wrapper3">
-    <div class="product-img">
-      <img src="">
-    </div>
-    <div class="product-info">
-      <div class="product-text">
-        <h1 id="name1">Titre article</h1>
-        <p id="description1"> Description </p>
       
-      </div>
-      <div class="product-price-btn">
-        <p id="price1">$</p>
-        <button type="button">buy now</button>
-      </div>
-    </div>
-  </div>
 
+    
+ 
 
-  
-    <!-- Article 3-->
-    <div class="wrapper3">
-    <div class="product-img">
-      <img src="">
-    </div>
-    <div class="product-info">
-      <div class="product-text">
-        <h1>Titre article</h1>
-        <p> Description </p>
-      
-      </div>
-      <div class="product-price-btn">
-        <p><span>Prix</span>$</p>
-        <button type="button">buy now</button>
-      </div>
-    </div>
-  </div>
+    <script>
+      var p = new Vue({
+          el: '#prod',
+          data: {
+              prod: [],
+          },
 
-</div>
-<<<<<<< HEAD
-=======
-
->>>>>>> 5c820e36c690843b6ffa7a92e1cf47f43dc0cdfc
-
-<div id="Produits en vente">
-
-
-<p id="BESTSELL">Produits en vente :</p>
-
-
-<div class="flex-container">
-
-  <!--Article 1 -->
- <div class="wrapper3">
-    <div class="product-img">
-      <img src="">
-    </div>
-    <div class="product-info">
-      <div class="product-text">
-        <h1>Titre article</h1>
-        <p> Description </p>
-      
-      </div>
-      <div class="product-price-btn">
-        <p><span>Prix</span>$</p>
-        <button type="button">buy now</button>
-      </div>
-    </div>
-  </div>
-
-<<<<<<< HEAD
-=======
- <!--Article 2 -->
-
-<div class="wrapper3">
-    <div class="product-img">
-      <img src="">
-    </div>
-    <div class="product-info">
-      <div class="product-text">
-        <h1>Titre article</h1>
-        <p> Description </p>
-      
-      </div>
-      <div class="product-price-btn">
-        <p><span>Prix</span>$</p>
-        <button type="button">buy now</button>
-      </div>
-    </div>
-  </div>
-
-<!--Artcile 3 -->
-
-
-<div class="wrapper3">
-    <div class="product-img">
-      <img src="">
-    </div>
-    <div class="product-info">
-      <div class="product-text">
-        <h1>Titre article</h1>
-        <p> Description </p>
-      
-      </div>
-      <div class="product-price-btn">
-        <p><span>Prix</span>$</p>
-        <button type="button">buy now</button>
-      </div>
-    </div>
-  </div>
-
->>>>>>> 5c820e36c690843b6ffa7a92e1cf47f43dc0cdfc
-</div>
-</div>
-
-<<<<<<< HEAD
-=======
-
-
-
-
-
-
-
-
-
-
-	
-
->>>>>>> 5c820e36c690843b6ffa7a92e1cf47f43dc0cdfc
-</body>
-<footer>
-<?php include("footer.php"); ?>
-</footer>
-<<<<<<< HEAD
-=======
-
->>>>>>> 5c820e36c690843b6ffa7a92e1cf47f43dc0cdfc
-</html>
+          created: function () {
+            fetch('sell_products.php', {
+              method: 'GET',
+            }).then((res) => res.json())
+            .then((data) =>  this.prod = data)
+            .catch((err)=>console.error(err))
+          }
+      })
+    </script>
+  </body>
+</html
