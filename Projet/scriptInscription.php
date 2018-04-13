@@ -33,9 +33,12 @@
 
 
                         $requete->execute();
-
+                        header('location: connexion.php');
                     }catch(PDOException $e) {
                     	echo($e->getMessage());
-					}
+                    	}
 			}
+
+
+
 ?>
