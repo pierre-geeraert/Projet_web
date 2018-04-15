@@ -83,7 +83,7 @@
 								${'description'.$nbr_event}=$donnees['description'];
 								${'id'.$nbr_event}=$donnees['event_id'];
 							}
-							
+							echo $donnees['event_id'];
 							for($var=1; $var <= $nbr_event; $var++){
 									$id_form = 'id'.$var;
 									echo '
@@ -102,9 +102,10 @@
 													<p class="description">
 														'.${'description'.$var}.'
 													</p>
-													<ul>
+													<ul>    
 														<form method="post" action="img.php" enctype="multipart/form-data">
 														<input type="file" name="image" />
+														<input name="id" type="hidden" value="'.${'id'.$var}.'"/>
 														<input type="submit" name="submit" value="Envoyer" />
 														</form>
 													</ul>
