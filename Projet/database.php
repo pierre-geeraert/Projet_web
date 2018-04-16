@@ -21,10 +21,13 @@ class Database
     }
   }
 
-  // Query method
-  public function query($query){
-      $this->_stmt = $this->_connect->prepare($query);
-  }
+  public function query ($sql, $data = array()){
+		$this->_stmt = $this->_connect->prepare($sql);
+		$this->_stmt->execute($data);
+		return $this->_stmt->fetchAll(PDO::FETCH_OBJ);
+	}
+
+ 
   // execute method
   public function execute(){
       return $this->_stmt->execute();

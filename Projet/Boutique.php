@@ -1,3 +1,12 @@
+<?php
+
+require 'database.php';
+require 'panier.class.php';
+$DB = new Database();
+$panier = new panier($DB);
+
+?>
+
 <html>
 
     <head>
@@ -15,11 +24,13 @@
     <body>
 
       <header>
-	      <?php include("header.php"); ?>
+        <?php include("header.php"); ?>
+        
       </header>
 
         <div class="best_sell">
-            <p id="BESTSELL">Meilleures ventes :</p>
+            <p class="titreboutique">Meilleures ventes :</p>
+
 
             <div class="flex-container" id="best">
               <div class="wrapper3" v-for="t in best">
@@ -36,12 +47,13 @@
 
                   <div class="product-price-btn">
                     <p> {{t.price}} €</p>
-                    <button type="button">Acheter</button>
+                    <a  :href="`AddPanier.php?id=${t.product_id}`"><button type="button" >Acheter</button></a>
+
                   </div>
 
                 </div>
               </div>
-              
+              </div>
               
               <script>
            var b = new Vue({
@@ -57,31 +69,31 @@
             .then((data) =>  this.best = data)
             .catch((err)=>console.error(err))
           }
+          
       })
     </script>
 
       </div>
 
-
-      <div class="shop_products">
-            <p id="BESTSELL">Liste des produits en vente :</p>
+ <div class="shop_products">
+            <p class="titreboutique">Liste des produits en vente :</p>
 
             <div class="flex-container" id="prod">
-              <div class="wrapper3" v-for="p in prod">
+              <div class="wrapper3" v-for="t in prod">
                 <div class="product-img">
-                  <img :src="`Images/Produits/${p.url}`">
+                  <img :src="`Images/Produits/${t.url}`">
                 </div>
 
                 <div class="product-info">
                   
                   <div class="product-text">
-                    <h1> {{p.name}} </h1>
-                    <p>  {{p.description}} </p>
+                    <h1> {{t.name}} </h1>
+                    <p>  {{t.description}} </p>
                   </div>
 
                   <div class="product-price-btn">
-                    <p> {{p.price}} €</p>
-                    <button type="button">Acheter</button>
+                    <p> {{t.price}} €</p>
+                    <a  :href="`AddPanier.php?id=${t.product_id}`"><button type="button" >Acheter</button></a>
                   </div>
 
                 </div>
@@ -89,16 +101,8 @@
 
             </div>  
             
-            
-      
-
-      
-
-    
- 
-
-    <script>
-      var p = new Vue({
+        <script>
+      var t = new Vue({
           el: '#prod',
           data: {
               prod: [],
@@ -112,6 +116,18 @@
             .catch((err)=>console.error(err))
           }
       })
-    </script>
+    </script>     
+      
+</div>
+      
+
+     
+
+    
+ 
+    <footer>
+	<?php include("footer.php"); ?>
+    </footer>  
+   
   </body>
 </html
