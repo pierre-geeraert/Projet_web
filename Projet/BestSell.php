@@ -1,14 +1,14 @@
 <?php
-    require_once('database.php');
+    require('database.php');
 
-    // JUSTE POUR LE DEBUGAGE , TU PEUX L'ENLEVER APRES
+   
   
 
-    $db = new Database;
+    $DB = new Database;
 
-    $db->query("SELECT * from products order by number_of_sales desc limit 3");
-    $bestsell = $db->fetchAll();
-    $db->closeCursor();
+    $DB->query("SELECT * from products order by number_of_sales desc limit 3");
+    $bestsell = $DB->fetchAll();
+    $DB->closeCursor();
 
     echo json_encode($bestsell);
     

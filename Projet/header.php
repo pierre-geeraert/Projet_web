@@ -52,8 +52,12 @@ echo'   <div class="element_header">
             <li><a href="index.php"> Accueil </a></li>
             <li><a href="BoiteIdee.php"> Boite à idée </a></li>
             <li><a href="Evenements.php"> Evénements du mois </a></li>
-            <li><a href="Boutique.php"> Boutique </a></li>
-        </ul>	
+			<li><a href="Boutique.php"> Boutique </a></li>
+			<a href="panier.php" id="Panier"> <img src="Images/panier.png" height="50" ></a>
+		</ul>	
+		
+					
+				
     </div> 
 	
 </nav>

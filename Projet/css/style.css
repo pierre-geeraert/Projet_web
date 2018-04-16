@@ -140,6 +140,7 @@ fieldset
 
     background-color: #8A1002;
 }
+
 .element_header2 a {
     display: block;
     color: white;
@@ -147,6 +148,7 @@ fieldset
     padding: 14px 16px;
     text-decoration: none;
 }
+
 
 .element_header_photo img { 
 	margin: 0% 1%; 
@@ -161,6 +163,11 @@ fieldset
 	background: #2b2b2b;
 	color: white;
 	padding: 1%;
+}
+#Panier{
+	
+	color: black;
+	margin-left: 80%;
 }
 
 /* Corps du site */
