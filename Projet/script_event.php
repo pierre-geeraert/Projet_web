@@ -41,23 +41,51 @@ for($var=1; $var <= $nbr_url; $var++){
 	$nbr_like=$donnees2['nbr_like'];
 	$reponse2->closeCursor();
 	
+	$reponse3 = $bdd->query('SELECT comments FROM comments WHERE picture_id = '.${'picture'.$var}.'');
+	$nbr_comment=0;
+	$var2=0;
+	
+	$comment1=null;
+	$comment2=null;
+	$comment3=null;
+	
+	while($donnees3=$reponse3->fetch()){
+		$nbr_comment++;
+		${'comment'.$nbr_comment}=$donnees3['comments'];
+	}
+	
 	echo '
 			
 		<body>
 			<div class="even1">
 				<fieldset class="inner">
 					<ul class="img_event">
-						<img src="'.${'url'.$var}.'" alt="" width="250px" height="auto" />
+						<img class="img_event-img" src="'.${'url'.$var}.'" alt="" />
 						
-						<form id="'.$picture_var.'" action="like.php" method="post">
+						
+						<p class="comment">
+							'.$comment1.'
+							</br>
+							'.$comment2.'
+							</br>
+							'.$comment3.'
+						</p>
+						
+						<form id="'.$picture_var.'" class="test_form" action="like.php" method="post">
 							<input type="hidden" name="'.$var.'" value="'.${'picture'.$var}.'"/>
 							<input type="hidden" name="nbr_url" value="'.$nbr_url.'"/>
 						</form> 
 						
 						<a href=\'#\' onclick=\'document.getElementById("'.$picture_var.'").submit()\'> Liker la photo ('.$nbr_like.') </a>
-						<a href="comment.php"> Commenter </a>
 						
-															
+						
+						<form  method="post" action="comment.php">
+							<input class="input" id="comment" name="comment" required="required" type="text" width= "200px" placeholder="Insérez votre commentaire ici ..." />
+							<input type="hidden" name="'.$var.'" value="'.${'picture'.$var}.'"/>
+							<input type="hidden" name="nbr_url" value="'.$nbr_url.'"/>
+							<input type="submit" value="Commenter"/>
+						</form>
+						
 					</ul>
 				</fieldset>
 			</div>

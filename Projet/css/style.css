@@ -96,6 +96,28 @@ font-style: normal;
 	background-color: #8A1002;
 }
 
+.input {
+	width: 200px;
+}
+
+.img_event-img {
+	float: left;
+	width: 250px;
+	height: auto;
+}
+
+.comment {
+	float: left;
+	width: 55%;
+	margin-left: 2%;
+}
+
+.test_form {
+	clear: both;
+	width: 0%;
+}
+
+
 fieldset
 {
   box-shadow: 6px 6px 0px #2b2b2b;
