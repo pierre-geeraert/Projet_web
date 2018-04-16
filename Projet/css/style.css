@@ -21,6 +21,13 @@ font-style: normal;
 	margin-bottom: 1%;	
 }
 
+.center_boite{
+	width: 500px;
+	margin-left: 45%;
+}
+
+
+
 .description {
 	float: left;
 	width: 80%;
