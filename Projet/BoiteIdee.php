@@ -52,7 +52,7 @@
   </div>
 
  <div class="c">
-<<<<<<< HEAD
+
 -->
 <div class="form-style-6">
 <h1>Quel est votre idée</h1>
@@ -67,11 +67,7 @@
 
     
     
-=======
 
-  
->>>>>>> master
-	
 	
     </div>
 </div>

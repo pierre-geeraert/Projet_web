@@ -1610,7 +1610,7 @@ event_id</ColNames>
     </argument>
     <argument id="383" parent="257" name="comment_in">
       <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>text|0s</DataType>
     </argument>
     <argument id="384" parent="257" name="picture_id_in">
       <Position>2</Position>
