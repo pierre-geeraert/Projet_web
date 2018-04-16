@@ -179,6 +179,10 @@ html, body {
  
 }
 
+.new_event {
+	margin: 0.5%;
+	width: 12%;
+}
 
 .participate {
 	margin-left: 40%;

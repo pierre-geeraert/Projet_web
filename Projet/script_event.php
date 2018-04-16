@@ -1,3 +1,4 @@
+
 		<html>
 			<head>
 				<meta charset="utf-8" />
@@ -80,13 +81,18 @@ for($var=1; $var <= $nbr_url; $var++){
 						
 						
 						<form  method="post" action="comment.php">
-							<input class="input" id="comment" name="comment" required="required" type="text" width= "200px" placeholder="Insérez votre commentaire ici ..." />
+							<input class="input" id="comment" name="comment" required="required" type="text" placeholder="Insérez votre commentaire ici ..." />
 							<input type="hidden" name="'.$var.'" value="'.${'picture'.$var}.'"/>
 							<input type="hidden" name="nbr_url" value="'.$nbr_url.'"/>
 							<input type="submit" value="Commenter"/>
-						</form>
+						</form>';
 						
-					</ul>
+						if (isset($_SESSION)) { 
+							if($_SESSION['statut'] === "Tuteur"){ 
+								echo '<a href="report.php"> Signaler </a>';
+							}
+						}
+					echo '</ul>
 				</fieldset>
 			</div>
 		</body>

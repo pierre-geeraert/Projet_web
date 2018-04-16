@@ -1,5 +1,3 @@
-
-
 <!--####################################
  Auteur : Groupe 3
  Date : 2018
@@ -7,7 +5,6 @@
  #######################################-->
 
 <html>
-
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="css/style.css" />
@@ -16,8 +13,7 @@
 
         <title>BDE Arras</title>
     </head>
-
-    <!-- L'en-tête -->    
+ 
     <header>
 	
 	<?php include("header.php"); ?>
@@ -26,52 +22,21 @@
 	
 <body>
 	<div class="wrapper">
-
     <div class="wrapper2">
-<!--
-  <div class="a">
-  <div class="form-style-6">
-<h1>Quel est votre idée</h1>
-<form>
-<input type="text" name="field1" placeholder="Ton nom" />
-<input name="field3" placeholder="Description de l'idée"/> 
-<input type="submit" value="Envoyer" />
-</form>
-</div>
-  </div>
-  <div class="b">
 
-  <div class="form-style-6">
-<h1>Quel est votre idée</h1>
-<form>
-<input type="text" name="field1" placeholder="Ton ndom" />
-<input name="field3" placeholder="Description de l'idée"/> 
-<input type="submit" value="Envoyer" />
-</form>
-</div>
-  </div>
+		<div class="form-style-6">
+		<h1>Quel est votre idée</h1>
+		<form  method="post" action="AddIdea.php">
+			<input type="text" name="title" placeholder="Titre de l'idée"/>
+			<input type="text" name="desc" placeholder="Description de l'idée"/> 
+			<input type="submit" value="Envoyer" />
+		</form>
+		</div>
 
- <div class="c">
-
--->
-<div class="form-style-6">
-<h1>Quel est votre idée</h1>
-<form>
-<input type="text" name="field1" placeholder="Ton nom" />
-<input name="field3" placeholder="Description de l'idée"/> 
-<input type="submit" value="Envoyer" />
-</form>
-</div>
-
-    </div>
-
-    
-    
 
 	
     </div>
-</div>
-</div>
+	</div>
 </body>
 	
 <footer>

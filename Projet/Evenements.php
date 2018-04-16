@@ -24,6 +24,21 @@
     <body>
 		<div class="wrapper">
 		
+			
+				<?php	
+					if (isset($_SESSION)) { 
+						if($_SESSION['statut'] === "BDE"){ 
+							echo '
+							<div class="new_event">
+								<fieldset class="inner">
+								<a href="AddEvent.php"> Ajouter un évenement </a>
+								</fieldset>
+							</div>	';
+						}
+					}			
+				?>																	
+
+		
 				<div class="even1">
 				
 					<h3>Evénements à venir :</h3>
