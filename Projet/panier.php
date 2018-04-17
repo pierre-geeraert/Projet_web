@@ -64,17 +64,20 @@ $panier = new panier($DB);
 			}
 			foreach($products as $product):
 			?>
-			<div class="row">
+			<div id="Productlist">
 				<span class="name"style="width:25%"><?= $product->name; ?></span>
 				<span class="price"style="width:25%"><?= number_format($product->price,2,',',' '); ?> €</span>
 				<span class="quantity" style="width:25%"><input type="text" name="panier[quantity][<?= $product->product_id; ?>]" value="<?= $_SESSION['panier'][$product->product_id]; ?>"></span>
 				
 				<span class="action" style="width:20%">
-					<a href="panier.php?delPanier=<?= $product->product_id; ?>" class="del"><img src="Images/del.png"></a>
+					<a href="panier.php?delPanier=<?= $product->product_id; ?>" class="del"><img src="Images/del.png" height="50"></a>
 				</span>
 			</div>
 			<?php endforeach; ?>
-			
+			<div class="rowtotal">
+				Grand Total : <span class="total"><?= number_format($panier->total()); ?> € </span>
+			</div>
+			<input type="submit" value="Recalculer">
 	</div>
 	</form>
 </div>

@@ -11,7 +11,8 @@ if(isset($_GET['id'])){
         $json['message'] = "Ce produit n'existe pas";
     }
     $panier->add($product[0]->product_id);
-    die('Le produit a été ajouté');
+    
+    header('Location: Boutique.php');
 }
         
 

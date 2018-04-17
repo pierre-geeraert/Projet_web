@@ -33,30 +33,33 @@ $panier = new panier($DB);
 
 
             <div class="flex-container" id="best">
-              <div class="wrapper3" v-for="t in best">
+              <div class="wrapper3" v-for="(b, index) in best">
                 <div class="product-img">
-                  <img :src="`Images/Produits/${t.url}`">
+                  <img :src="`Images/Produits/${b.url}`">
                 </div>
 
                 <div class="product-info">
                   
                   <div class="product-text">
-                    <h1> {{t.name}} </h1>
-                    <p>  {{t.description}} </p>
+                    <h1> {{b.name}} </h1>
+                    <p>  {{b.description}} </p>
                   </div>
 
                   <div class="product-price-btn">
-                    <p> {{t.price}} €</p>
-                    <a  :href="`AddPanier.php?id=${t.product_id}`"><button type="button" >Acheter</button></a>
+                    <p> {{b.price}} €</p>
+                    <a  :href="`AddPanier.php?id=${b.product_id}`" ><button type="button" >Acheter</button></a>
+                  
 
                   </div>
+
+              </div>  
 
                 </div>
               </div>
               </div>
               
               <script>
-           var b = new Vue({
+            b = new Vue({
           el: '#best',
           data: {
               best: [],
@@ -68,9 +71,17 @@ $panier = new panier($DB);
             }).then((res) => res.json())
             .then((data) =>  this.best = data)
             .catch((err)=>console.error(err))
-          }
+            }
+            
+              
+        
+            
+           })
+           
           
-      })
+          
+          
+     
     </script>
 
       </div>
@@ -94,6 +105,8 @@ $panier = new panier($DB);
                   <div class="product-price-btn">
                     <p> {{t.price}} €</p>
                     <a  :href="`AddPanier.php?id=${t.product_id}`"><button type="button" >Acheter</button></a>
+                    <a  :href="`Delproduct.php?id=${t.product_id}`"><button type="button" >Supprimer</button></a>
+
                   </div>
 
                 </div>
@@ -102,7 +115,7 @@ $panier = new panier($DB);
             </div>  
             
         <script>
-      var t = new Vue({
+      let t = new Vue({
           el: '#prod',
           data: {
               prod: [],
@@ -115,8 +128,12 @@ $panier = new panier($DB);
             .then((data) =>  this.prod = data)
             .catch((err)=>console.error(err))
           }
+             
+     
       })
     </script>     
+
+
       
 </div>
       
