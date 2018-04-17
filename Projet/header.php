@@ -14,7 +14,7 @@ echo'   <div class="element_header">
 					<ul>
 						  <li><a href="#"> '.$_SESSION['surname'].' '.$_SESSION['name'].' ('.$_SESSION['statut'].') </a>
 								<ul>
-								  <li><a href="#">Sous-item 1</a></li>
+								  <li><a href="notif.php"> Messagerie </a></li>
 								  <li><a href="#">Sous-item 2</a></li>
 								  <li><a href="#">Sous-item 3</a></li>
 								</ul>
