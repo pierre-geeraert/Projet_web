@@ -37,6 +37,7 @@ if(!$bool_verif){header('location: alert.php');}
 if($bool_verif) {
 
     try {
+        //Use to upload and move pictures
         $resultat = move_uploaded_file($_FILES['image']['tmp_name'], $nom);
         if (!$resultat) {
             throw new Exception('Could not move file');
