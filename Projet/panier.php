@@ -61,7 +61,12 @@ $panier = new panier($DB);
 				$products = array();
 			}else{
 				$products = $DB->query('SELECT * FROM products WHERE product_id IN ('.implode(',',$ids).')');
+				
 			}
+			$products = $DB->fetchAll();
+				$DB->closeCursor();
+
+			
 			foreach($products as $product):
 			?>
 			<div id="Productlist">

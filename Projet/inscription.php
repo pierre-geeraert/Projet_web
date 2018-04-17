@@ -43,7 +43,7 @@
 						
 						<p> 
                                     <label for="usernamesignup" class="uname"  > </label>
-                                    <input id="Email" class="champ" name="Email" required="required" type="text" placeholder="Email" />
+                                    <input id="Email" class="champ" name="Email" required="required" type="email" placeholder="Email" />
 						</p>
                         
 						<p> 

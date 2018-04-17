@@ -114,7 +114,7 @@ $panier = new panier($DB);
 
             </div>  
             
-        <script>
+            <script>
       let t = new Vue({
           el: '#prod',
           data: {
@@ -122,11 +122,30 @@ $panier = new panier($DB);
           },
 
           created: function () {
-            fetch('sell_products.php', {
-              method: 'GET',
-            }).then((res) => res.json())
-            .then((data) =>  this.prod = data)
-            .catch((err)=>console.error(err))
+            this.getProducts()
+          },
+
+          methods : {
+            deleteP( productID ) {
+              var url = 'Delproduct.php?id=' + productID;
+
+              fetch(url, { method: 'GET' } )
+                .then((data) => {
+                  this.prod = data;
+                  this.getProducts()
+                })
+                .catch((err)=>console.error(err))
+
+            },
+
+            getProducts() {
+              
+              fetch('sell_products.php', { method: 'GET' })
+                .then((res) => res.json())
+                .then((data) =>  this.prod = data)
+                .catch((err)=>console.error(err))
+
+            }
           }
              
      
