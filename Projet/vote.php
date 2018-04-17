@@ -8,10 +8,10 @@ $user_id=$_SESSION['id'];
 
 for($var=1; $var<=$nbr ; $var++){
 	if (isset($_POST[$var])) {
-		$picture_id=$_POST[$var];
-		$bdd->query('call `like`('.$user_id.', '.$picture_id.')');
+		$event_id=$_POST[$var];
+		$bdd->query('call vote('.$user_id.', '.$event_id.')');
 	}
 }
 
-header('location: Evenements.php');
+header('location: BoiteIdee.php');
 ?>

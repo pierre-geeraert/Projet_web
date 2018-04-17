@@ -22,7 +22,6 @@
 	
 <body>
 	<div class="wrapper">
-    <div class="wrapper2">
 
 		<div class="form-style-6">
 		<h1>Quel est votre idée</h1>
@@ -46,7 +45,12 @@
 				${'id'.$nbr_event}=$donnees['event_id'];
 			}
 							
-			for($var=1; $var <= $nbr_event; $var++){	
+			for($var=1; $var <= $nbr_event; $var++){
+				$event_var='event'.$var;	
+				$reponse2= $bdd->query('call nb_vote('.${'id'.$var}.')');
+				$donnees2=$reponse2->fetch();
+				$nbr_vote=$donnees2['nbr_vote'];
+				$reponse2->closeCursor();				
 				echo '
 				<ul class="center_boite">
 					<fieldset>
@@ -56,6 +60,12 @@
 						<p>
 							'.${'description'.$var}.'
 						</p>
+						<form id="'.$event_var.'" action="vote.php" method="post">
+							<input type="hidden" name="'.$var.'" value="'.${'id'.$var}.'"/>
+							<input type="hidden" name="nbr_url" value="'.$nbr_event.'"/>
+						</form> 
+						
+						<a href=\'#\' onclick=\'document.getElementById("'.$event_var.'").submit()\'> Voter ('.$nbr_vote.') </a>
 						';
 						if (isset($_SESSION)) { 
 							if($_SESSION['statut'] === "BDE"){ 
@@ -63,7 +73,9 @@
 									<form id="'.$var.'" action="validate.php" method="post">
 										<input type="hidden" name="'.$var.'" value="'.${'id'.$var}.'"/>
 										<input type="hidden" name="nbr_event" value="'.$nbr_event.'"/>
+										<input id="date" name="date" required="required" type="text" placeholder="Insérez une date (ex :2018-01-30)" />
 									</form> 
+									
 									<a class="participate "href=\'#\' onclick=\'document.getElementById("'.$var.'").submit()\'> Valider l\'idée </a>
 								';
 							}
@@ -76,9 +88,6 @@
 			}					
 		?>
 
-
-	
-    </div>
 	</div>
 </body>
 	
