@@ -26,7 +26,11 @@ class Database
 		$this->_stmt->execute($data);
 		return $this->_stmt->fetchAll(PDO::FETCH_OBJ);
 	}
-
+    public function prepare ($sql, $data = array()){
+		$this->_stmt = $this->_connect->prepare($sql);
+		$this->_stmt->execute($data);
+		return $this->_stmt->fetchAll(PDO::FETCH_OBJ);
+	}
  
   // execute method
   public function execute(){
