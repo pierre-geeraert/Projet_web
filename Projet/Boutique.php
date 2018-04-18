@@ -138,46 +138,44 @@ $panier = new panier($DB);
 
     <section>
    
-    <div id="app">
-    
-    <div v-for="item in filteredItems" >
-      <p>{{item.name}}<p>
-    </div>
-    
-    <input type="text" v-model="search">
-    
-  </div>  
-  <script>
-
-    const app = new Vue({
-  
-  el: '#app',
-  
-  data: {
-     search: '',
-     items: []
-       
-  },
-  created: function () {
-            this.getProducts()
-          },
-          computed: {
-    filteredItems() {
-      return this.items.filter(item => {
-         return item.type.indexOf(this.search.toLowerCase()) > -1
-      })
-    }
-  },
-  getProducts() {
+     <div  id="Br">
+        <h1>Produit recherché<h1>
+          <input type="text" v-model="search" placeholder="Recherche"
+          <div v-for="searchs in filteredproduct">
+            <h2>{{search.name}}<h2>
               
-              fetch('sell_products.php', { method: 'GET' })
+    </div>
+    </div>
+     <script>
+
+let Br = new vue({
+  el:'#Br',
+  data:{
+      product:[],
+      search:''
+    },
+    created: function () {
+      this.getProducts()
+  },
+  methods:{
+
+  },
+  getProducts(){
+    fetch('sell_products.php', { method: 'GET' })
                 .then((res) => res.json())
-                .then((data) =>  this.item = data)
+                .then((data) =>  this.product = data)
                 .catch((err)=>console.error(err))
-            },
-  
-})
-    </script>
+  },
+  computed:{
+    filteredproduct:function(){
+      return this.product.filter((searchs)=>{
+        return searchs.name.match(this.search);
+      });
+       
+    }
+  }
+}
+       </script>
     
 </section>
      

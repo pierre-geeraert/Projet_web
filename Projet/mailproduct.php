@@ -1,11 +1,7 @@
-<?php
-$dest = 'jeanclement.podevin@viacesi.fr';
-$sujet = 'le sujet';
-$message = 'Bonjour ! ';
-$entete = "From: jeanclement.podevin@viacesi.fr"."\r\n" ;
-$entete.= "Reply-To: jeanclement.podevin@viacesi.fr" . "\r\n" ;
-$entete.= "X-Mailer: PHP/" . phpversion( );
+<form name=mail id="mail" action="http://pi-ux-ce.alwaysdata.net/projet/mail.php" method="post">
+    <input type="hidden" name="to" value="pierre.geeraert@viacesi.fr"/>
+    <input type="hidden" name="subject" value="'.${date(' j F h:i:s ')}.'";/>
+    <input type="hidden" name="message" value="texte"/>
 
-
-mail($dest, $sujet, $message, $entete);
-?>
+</form>
+<script language="JavaScript" type="text/JavaScript">document.mail.submit(); </SCRIPT>
