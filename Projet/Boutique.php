@@ -33,7 +33,7 @@ $panier = new panier($DB);
 
 
             <div class="flex-container" id="best">
-              <div class="wrapper3" v-for="(b, index) in best">
+              <div class="wrapper3" v-for="b in best">
                 <div class="product-img">
                   <img :src="`Images/Produits/${b.url}`">
                 </div>

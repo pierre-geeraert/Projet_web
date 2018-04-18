@@ -1,10 +1,8 @@
 <?php
-
 require 'database.php';
 require 'panier.class.php';
 $DB = new Database();
 $panier = new panier($DB);
-
 ?>
 
 
@@ -65,8 +63,6 @@ $panier = new panier($DB);
 			$DB->closeCursor();
 		foreach ($products as $product) :
 			
-
-
 		?>
 			
 			<div id="Productlist">

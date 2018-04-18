@@ -32,20 +32,19 @@ class panier{
 		return array_sum($_SESSION['panier']);
 	}
 
-	public function total(){
+		public function total(){
 		$total = 0;
 		$ids = array_keys($_SESSION['panier']);
 		if(empty($ids)){
 			$products = array();
 		}else{
-			$products = $this->DB->query('SELECT product_id, price FROM products WHERE product_id IN ('.implode(',',$ids).')',array());
+			$products = $this->DB->query('SELECT product_id, price FROM products WHERE product_id IN ('.implode(',',$ids).')');
 		}
 		foreach( $products as $product ) {
 			$total += $product->price * $_SESSION['panier'][$product->product_id];
 		}
 		return $total;
 	}
-
 	public function add($product_id){
 		if(isset($_SESSION['panier'][$product_id])){
 			$_SESSION['panier'][$product_id]++;
