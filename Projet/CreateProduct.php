@@ -21,8 +21,9 @@ try {
     $resultat = move_uploaded_file($_FILES['image']['tmp_name'], $nom);
     if (!$resultat) {
         throw new Exception('Could not move file');
-    }
-} catch (Exception $e) {
+                    }           
+    } catch (Exception $e) 
+{
     die ('File did not upload: ' . $e->getMessage());
 }
 
@@ -31,7 +32,8 @@ try {
 
     $bdd->query('INSERT INTO products("name, description, price, url) VALUES ('.$title.', '.$desc.','.$prix.', '.$nom.'")');
 
-} catch (PDOException $e) {
+    } catch (PDOException $e)
+{
     echo $e;
 }
 

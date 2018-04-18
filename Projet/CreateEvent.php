@@ -55,7 +55,8 @@ try {
     $requete1->bindValue(':user_id', $user_id, PDO::PARAM_STR);
     $requete1->bindValue(':event_id', $event_id_in, PDO::PARAM_STR);
     $requete1->execute();
-} catch (PDOException $e) {
+    } catch (PDOException $e) 
+{
     echo $e;
 }
 

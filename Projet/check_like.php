@@ -12,6 +12,7 @@ $requete2 = $bdd->query("select count(*) as test from appreciate where user_id=2
 //$requete2->bindValue(':user_id', $user_id, PDO::PARAM_STR);
 //$requete2->bindValue(':picture_id', $picture_id, PDO::PARAM_STR);
 //$requete2->execute();
+
 $donnees = $requete2->fetch();
 echo $donnees[ 'test' ];
 $json_like=json_encode($donnees);

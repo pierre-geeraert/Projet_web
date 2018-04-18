@@ -56,7 +56,8 @@ $panier = new panier($DB);
 		$ids = array_keys($_SESSION['panier']);
 		if (empty($ids)) {
 			$products = array();
-		} else {
+						 } 
+		else{
 			$DB->query('SELECT * FROM products WHERE product_id IN (' . implode(',', $ids) . ')');
 			
 		}
@@ -86,15 +87,15 @@ $panier = new panier($DB);
 			
 	</form>
 		<ul>
-			<form method="post" action="buy.php">
-				<?php 
-					for($compteur=1; $compteur<=$var; $compteur++){
+	<form method="post" action="buy.php">
+		<?php 
+			for($compteur=1; $compteur<=$var; $compteur++){
 
-						echo '
-							<input name="'.'id'.$compteur.'" type="hidden" value="'.${'id'.$compteur}.'"/>
-							<input name="'.'nb'.$compteur.'" type="hidden" value="'.${'nb'.$compteur}.'"/>
-						';
-					}	
+				echo '
+					<input name="'.'id'.$compteur.'" type="hidden" value="'.${'id'.$compteur}.'"/>
+					<input name="'.'nb'.$compteur.'" type="hidden" value="'.${'nb'.$compteur}.'"/>
+				';
+			}	
 				?>
 				<input name="var" type="hidden" value=<?= $var?> />
 				<input type="submit" name="submit" value="Acheter" />

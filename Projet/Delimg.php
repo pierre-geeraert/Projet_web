@@ -4,8 +4,10 @@ $bdd = new PDO('mysql:host=mysql-pi-ux-ce.alwaysdata.net;dbname=pi-ux-ce_web;cha
 
 $nbr= $_POST['nbr_url'];
 
-for($var=1; $var<=$nbr ; $var++){
-	if (isset($_POST[$var])) {
+for($var=1; $var<=$nbr ; $var++)
+{
+	if (isset($_POST[$var]))
+	{
 		$bdd->query('call delete_pic('.$_POST[$var].')');
 	}
 }

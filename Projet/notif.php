@@ -32,11 +32,14 @@
 		$reponse = $bdd->query('SELECT user_sent_id, date, picture_id FROM notification WHERE type="0"');
 		$reponse2 = $bdd->query('SELECT url FROM pictures INNER JOIN notification ON notification.picture_id = pictures.picture_id');
 
-		if (isset($_SESSION)) { 
-			if($_SESSION['statut'] === "BDE"){ 
+		if (isset($_SESSION))
+		{ 
+			if($_SESSION['statut'] === "BDE")
+			{ 
 			
 				$var=0;
-				while($donnees = $reponse->fetch()){
+				while($donnees = $reponse->fetch())
+				{
 					${'user_sent_id'.$var} = $donnees['user_sent_id'];
 					${'dates'.$var} = $donnees['date'];
 					${'picture_id'.$var} = $donnees['picture_id'];
@@ -67,7 +70,8 @@
 		
 		$reponse4 = $bdd->query('SELECT user_id FROM orders WHERE paid="0"');
 		$nbr_user=0;
-		while($donnees4 = $reponse4->fetch()){
+		while($donnees4 = $reponse4->fetch())
+		{
 			$nbr_user++;
 			${'user_id'.$nbr_user} = $donnees4['user_id'];
 			
@@ -75,7 +79,8 @@
 			$reponse5 = $bdd->query('call show_contain_user("'.${'user_id'.$nbr_user}.'")');
 			
 			$nbr_product=0;
-			while($donnees5 = $reponse5->fetch()){
+			while($donnees5 = $reponse5->fetch())
+			{
 				$nbr_product++;
 				${'product_name'.$nbr_product} = $donnees5['name'];
 								

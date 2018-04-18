@@ -1,8 +1,8 @@
 <?php
-require 'database.php';
-require 'panier.class.php';
-$DB = new Database();
-$panier = new panier($DB);
+  require 'database.php';
+  require 'panier.class.php';
+  $DB = new Database();
+  $panier = new panier($DB);
 ?>
 
 <html>
@@ -15,14 +15,15 @@ $panier = new panier($DB);
       <title>BDE Arras</title>
   </head>
 
-  <style>
+
+  <style> 
     #wrapper {
       padding : 2em
     }
 
     .wrapper3 {
       width: 27%;
-      padding: 2em;
+      padding: 2em; 
       margin: 2em 1%;
     }
 
@@ -63,24 +64,20 @@ $panier = new panier($DB);
     <header>
         <?php include("header.php"); ?>  
     </header>
+	  <div id="wrapper">
 	
-	
-	
-
-    <div id="wrapper">
-	
-				<?php	
-					if (isset($_SESSION['statut'])) { 
-						if($_SESSION['statut'] === "BDE"){ 
-							echo '
-							<div class="new_event">
-								<fieldset class="inner">
-								<a href="AddProduct.php"> Ajouter article </a>
-								</fieldset>
-							</div>	';
-						}
-					}			
-				?>
+      <?php	
+        if (isset($_SESSION['statut'])) { 
+          if($_SESSION['statut'] === "BDE"){ 
+            echo '
+            <div class="new_event">
+              <fieldset class="inner">
+              <a href="AddProduct.php"> Ajouter article </a>
+              </fieldset>
+            </div>	';
+          }
+        }			
+      ?>
         <section>
             <div class="shop_products">
                 <p class="titreboutique">Liste des produits en vente :</p>
@@ -91,7 +88,7 @@ $panier = new panier($DB);
                 </div>
                 
                 <div class="flex-container">
-                  <div class="wrapper3" v-for="t in prod">
+                  <div class="wrapper3" v-for="t in prod">  <!-- rendering a list of elements based on a table, t is an element of the table prod -->
                     
                     <div class="product-img">
                       <img :src="`Images/Produits/${t.url}`">
@@ -100,18 +97,18 @@ $panier = new panier($DB);
                     <div class="product-info">
                       
                       <div class="product-text">
-                        <h1> {{t.name}} </h1>
-                        <p>  {{t.description}} </p>
+                        <h1> {{t.name}} </h1>   <!-- the element name , work like a for each and will display -->
+                        <p>  {{t.description}} </p>  <!-- the element desciption , work like a for each and will display -->
                       </div>
 
                       <div class="product-price-btn">
-                        <p> {{t.price}} €</p>
+                        <p> {{t.price}} €</p>  <!-- the element price , work like a for each and will display -->
 						
 
 								<a  :href="`AddPanier.php?id=${t.product_id}`"><button type="button" >Acheter</button></a>
 
 						
-                        <a v-on:click="deleteP(t.product_id)"><button type="button" >Supprimer</button></a>
+                        <a v-on:click="deleteP(t.product_id)"><button type="button" >Supprimer</button></a>  <!-- Will execute the function in deleteP on click -->
                       </div>
 
                     </div>
@@ -165,12 +162,12 @@ $panier = new panier($DB);
     </div>
 
     <script>
-      let t = new Vue({
+      let t = new Vue({ // Instantiate a new vue
           el: '#wrapper',
-          data: {
-              prod: [],
+          data: { // Data object with table 
+              prod: [], 
               best: [],
-              searchName : ''
+              searchName : '' // for the nav bar
           },
 
           created: function () {
@@ -181,7 +178,7 @@ $panier = new panier($DB);
           methods : {
             deleteP( productID ) {
               if(confirm("Supprimer le produit ?")) {
-                var url = 'Delproduct.php?id=' + productID;
+                var url = 'Delproduct.php?id=' + productID;  // Will execute a delete function
                 fetch(url, { method: 'GET' } )
                   .then((data) => {
                     this.prod = data;
@@ -195,14 +192,14 @@ $panier = new panier($DB);
               let search = new FormData();
               search.append( "search", this.searchName );
 
-              fetch('sell_products.php', { method: 'POST', body: search })
+              fetch('sell_products.php', { method: 'POST', body: search }) // the class who have the request for display product 
                 .then((res) => res.json())
                 .then((data) =>  this.prod = data)
                 .catch((err)=>console.error(err))
             },
 
             getBest() {
-              fetch('BestSell.php', { method: 'GET' })
+              fetch('BestSell.php', { method: 'GET' }) // the class who have the request for display product 
                 .then((res) => res.json())
                 .then((data) =>  this.best = data)
                 .catch((err)=>console.error(err))

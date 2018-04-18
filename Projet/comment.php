@@ -6,8 +6,10 @@ $comment= $_POST['comment'];
 $user_id=$_SESSION['id'];
 $nbr = $_POST['nbr_url'];
 
-for($var=1; $var<=$nbr ; $var++){
-	if (isset($_POST[$var])) {
+for($var=1; $var<=$nbr ; $var++)
+{
+	if (isset($_POST[$var])) 
+	{
 		$bdd->query('call comment("'.$comment.'",'.$_POST[$var].','.$user_id.')');
 	}
 }

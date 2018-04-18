@@ -6,7 +6,7 @@ function ajax(url, params) {
                 return Promise.reject(data.error || 'Ajax request failure');
             else
                 return data;
-        });
+    });
 }
 
 var pictures = document.querySelectorAll('.pictures');
