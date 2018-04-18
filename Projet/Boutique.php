@@ -9,60 +9,46 @@ $panier = new panier($DB);
 
 <html>
 
-    <head>
-        <meta charset="utf-8" />
-        <link rel="stylesheet" href="css/style.css" />
-        <link rel="stylesheet" href="css/Boutique.css" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+      <meta charset="utf-8" />
+      <link rel="stylesheet" href="css/style.css" />
+      <link rel="stylesheet" href="css/Boutique.css" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+      <title>BDE Arras</title>
+  </head>
+  <body>
 
-        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <header>
+      <?php include("header.php"); ?>  
+    </header>
+    <div class="best_sell">
+      <p class="titreboutique">Meilleures ventes :</p>
+      <div class="flex-container" id="best">
+        <div class="wrapper3" v-for="(b, index) in best">
+            <div class="product-img">
+              <img :src="`Images/Produits/${b.url}`">
+            </div>
 
-        <title>BDE Arras</title>
-
-    </head>
-
-    <body>
-
-      <header>
-        <?php include("header.php"); ?>
-        
-      </header>
-
-        <div class="best_sell">
-            <p class="titreboutique">Meilleures ventes :</p>
-
-
-            <div class="flex-container" id="best">
-              <div class="wrapper3" v-for="b in best">
-                <div class="product-img">
-                  <img :src="`Images/Produits/${b.url}`">
-                </div>
-
-                <div class="product-info">
-                  
-                  <div class="product-text">
-                    <h1 > {{b.name}} </h1>
-                    <p>  {{b.description}} </p>
-                  </div>
-
-                  <div class="product-price-btn">
-                    <p> {{b.price}} €</p>
-                    <a  :href="`AddPanier.php?id=${b.product_id}`" ><button type="button" >Acheter</button></a>
-                  
-
-                  </div>
-
-              </div>  
-
-                </div>
+            <div class="product-info">
+                
+              <div class="product-text">
+                <h1> {{b.name}} </h1>
+                <p>  {{b.description}} </p>
               </div>
+              <div class="product-price-btn">
+                <p> {{b.price}} €</p>
+                <a  :href="`AddPanier.php?id=${b.product_id}`" ><button type="button" >Acheter</button></a>
               </div>
-              
-              <script>
-            b = new Vue({
+            </div>  
+          </div>
+        </div>
+      </div> 
+      <script>
+        b = new Vue({
           el: '#best',
           data: {
-              best: [],
+            best: [],
           },
 
           created: function () {
@@ -71,23 +57,78 @@ $panier = new panier($DB);
             }).then((res) => res.json())
             .then((data) =>  this.best = data)
             .catch((err)=>console.error(err))
-            }
+          } 
+        })
+
+      </script>
+
+    </div>
+
+        <div class="shop_products">
+          <p class="titreboutique">Liste des produits en vente :</p>
+          <?php include("search_bar.php"); ?>
+
+
+            <div class="flex-container" id="best">
+              <div class="wrapper3" v-for="b in best">
+
+            <div class="flex-container" id="prod">
+              <div class="wrapper3" v-for="t in prod">
+
+                <div class="product-img">
+                  <img :src="`Images/Produits/${t.url}`">
+                </div>
+
+                <div class="product-info">
+                  
+                  <div class="product-text">
+
+                    <h1 > {{b.name}} </h1>
+                    <p>  {{b.description}} </p>
+
+                    <h1> {{t.name}} </h1>
+                    <p>  {{t.description}} </p>
+
+                  </div>
+
+                  <div class="product-price-btn">
+                    <p> {{t.price}} €</p>
+                    <a  :href="`AddPanier.php?id=${t.product_id}`"><button type="button" >Acheter</button></a>
+                    <a  :href="`Delproduct.php?id=${t.product_id}`"><button type="button" >Supprimer</button></a>
+
+                  </div>
+
+                </div>
+              </div>
+
+            </div>  
             
-              
-        
-            
-           })
-           
-          
-          
-          
+        <script>
+      let t = new Vue({
+          el: '#prod',
+          data: {
+              prod: [],
+          },
+
+          created: function () {
+            fetch('search.php', {
+              method: 'GET',
+            }).then((res) => res.json())
+            .then((data) =>  this.prod = data)
+            .catch((err)=>console.error(err))
+          }
+             
      
-    </script>
+      })
+    </script>     
 
-      </div>
 
+      
+</div>
+      
  <div class="shop_products">
             <p class="titreboutique">Liste des produits en vente :</p>
+            
 
             <div class="flex-container" id="prod">
               <div class="wrapper3" v-for="t in prod">

@@ -1,3 +1,4 @@
+DROP  PROCEDURE IF EXISTS registered_list;
 DELIMITER |
 
 CREATE PROCEDURE registered_list(IN event_id_in INT)      
