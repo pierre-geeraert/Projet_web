@@ -30,13 +30,38 @@
                         $requete->bindValue(':Mdp', $Mdp, PDO::PARAM_STR);
                         $requete->bindValue(':Email2', $Email, PDO::PARAM_STR);
                         $requete->bindValue(':Statut', $Statut, PDO::PARAM_STR);
-
-
                         $requete->execute();
-                        header('location: connexion.php');
+
+                        $donnees=$requete->fetch();
+                        $token= $donnees['token'];
+
+                        //header('location: connexion.php');
                     }catch(PDOException $e) {
                     	echo($e->getMessage());
                     	}
+                    	echo "<p>$token</p>";
+
+
+//----------------------------------------------------------------------
+                //$to=$Email;
+                //$token="1fd534473a09b2e147ef375de54d47c09ab39aec";
+                $message = 'Merci de copier le lien: http://127.0.0.1/validation_user.php/?token='.$token.'';
+
+
+                echo '
+                    <form name=mail id="mail" action="http://pi-ux-ce.alwaysdata.net/projet/mail.php" method="post">
+                        <input type="hidden" name="to" value="'.$Email.'"/>
+                        <input type="hidden" name="subject" value="Validation compte BDE";/>
+                        <input type="hidden" name="message" value="'.$message.'"/>
+                
+                    </form>
+                    <script language="JavaScript" type="text/JavaScript">document.mail.submit(); </SCRIPT>
+                    ';
+                //header('location: connexion.php');
+//----------------------------------------------------------------------
+
+
+
 			}
 
 
