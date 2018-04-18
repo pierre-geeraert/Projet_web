@@ -1,10 +1,8 @@
 <?php
-
 require 'database.php';
 require 'panier.class.php';
 $DB = new Database();
 $panier = new panier($DB);
-
 ?>
 
 
@@ -23,7 +21,8 @@ $panier = new panier($DB);
         <link rel="stylesheet" href="css/style.css" />
         <link rel="stylesheet" href="css/main.css" />
         <link rel="stylesheet" href="css/Boutique.css" />
-        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title>BDE Arras</title>
     </head>
@@ -62,9 +61,11 @@ $panier = new panier($DB);
 			
 		}
 		$products = $DB->fetchAll();
+		
 			$DB->closeCursor();
 		$var=0;
 		foreach ($products as $product) :
+
 		$var++;
 		${'id'.$var}=$product['product_id'];
 		${'nb'.$var}=$_SESSION['panier'][$product['product_id']];
@@ -82,13 +83,16 @@ $panier = new panier($DB);
 				</span>
 			</div>
 			<?php endforeach; ?>
-			<div class="rowtotal">
-				Grand Total : <span class="total"><?= number_format($panier->total()); ?> € </span>
-			</div>
-			<input type="submit" value="Recalculer">
-	</div>
+			
 	</form>
+<<<<<<< HEAD
 	
+=======
+			<a href="mailproduct.php"> Acheter </a>
+			<?php 
+		
+
+>>>>>>> 4c6a92be9726aac87c1e45041500fcb73f173bbd
 
 		<ul>
 			<form method="post" action="buy.php">

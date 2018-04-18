@@ -1,6 +1,7 @@
 <?php
 
     require('database.php');
+  
 
     $search = $_POST['recherche'];
 	echo $search;
@@ -12,5 +13,6 @@
     $DB->closeCursor();
 
     echo json_encode($Jsearch);
+
     
 ?>

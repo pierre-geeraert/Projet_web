@@ -13,6 +13,15 @@ for($nbr=1; $nbr<=$var ; $nbr++){
 }
 
 
+
+for($var=1; $var<=$nbr ; $var++)
+{
+	if (isset($_POST[$var])) {
+		$bdd->query('call notif_insert_nocif("'.$user_id.'","'.$_POST[$var].'")');
+	}
+}
+
+header('Location: Evenements.php');
 ?>
 
 
