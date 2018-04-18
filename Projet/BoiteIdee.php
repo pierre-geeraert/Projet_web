@@ -8,8 +8,8 @@
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="css/style.css" />
-        <link rel="stylesheet" href="css/BoiteIdee.css" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/BoiteIdee.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>BDE Arras</title>
     </head>
@@ -19,8 +19,9 @@
 	<?php include("header.php"); ?>
 
     </header>
-	
+
 <body>
+
 	<div class="wrapper">
 
 		<div class="form-style-6">

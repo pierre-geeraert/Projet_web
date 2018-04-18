@@ -41,7 +41,7 @@ $panier = new panier($DB);
                 <div class="product-info">
                   
                   <div class="product-text">
-                    <h1> {{b.name}} </h1>
+                    <h1 > {{b.name}} </h1>
                     <p>  {{b.description}} </p>
                   </div>
 

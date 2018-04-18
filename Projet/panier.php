@@ -21,7 +21,8 @@ $panier = new panier($DB);
         <link rel="stylesheet" href="css/style.css" />
         <link rel="stylesheet" href="css/main.css" />
         <link rel="stylesheet" href="css/Boutique.css" />
-        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title>BDE Arras</title>
     </head>
@@ -60,33 +61,38 @@ $panier = new panier($DB);
 			
 		}
 		$products = $DB->fetchAll();
+		
 			$DB->closeCursor();
+		$var=0;
 		foreach ($products as $product) :
-			
+
+		$var++;
+		${'id'.$var}=$product['product_id'];
+
+
 		?>
 			
 			<div id="Productlist">
 				<span class="name"style="width:25%"><?= $product['name']; ?></span>
 				<span class="price"style="width:25%"><?= number_format($product['price'], 2, ',', ' '); ?> €</span>
-				<span class="quantity" style="width:25%"><input type="text" name="panier[quantity][<?= $product['product_id']; ?>]" value="<?= $product['product_id'] ?>"></span>
+				<span class="quantity" style="width:25%"><input type="text" name="panier[quantity][<?= $product['product_id']; ?>]" value=<?= $_SESSION['panier'][$product['product_id']]?>></span>
 				
 				<span class="action" style="width:20%">
 					<a href="panier.php?delPanier=<?= $product['product_id']; ?>" class="del"><img src="Images/del.png" height="50"></a>
 				</span>
 			</div>
 			<?php endforeach; ?>
-			<div class="rowtotal">
-				Grand Total : <span class="total"><?= number_format($panier->total()); ?> € </span>
-			</div>
-			<input type="submit" value="Recalculer">
-	</div>
+			
 	</form>
 			<a href="buy.php"> Acheter </a>
+			<?php 
+		
+
+
+		
+			?>
 </div>
 	 
-
-
-<?php session_unset(); ?>
 	
 	<footer>
 	<?php include("footer.php"); ?>
