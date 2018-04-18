@@ -105,7 +105,7 @@ $panier = new panier($DB);
                   <div class="product-price-btn">
                     <p> {{t.price}} €</p>
                     <a  :href="`AddPanier.php?id=${t.product_id}`"><button type="button" >Acheter</button></a>
-                    <a  :href="`Delproduct.php?id=${t.product_id}`"><button type="button" >Supprimer</button></a>
+                    <a v-on:click="deleteP(t.product_id)"><button type="button" >Supprimer</button></a>
 
                   </div>
 
@@ -127,15 +127,16 @@ $panier = new panier($DB);
 
           methods : {
             deleteP( productID ) {
-              var url = 'Delproduct.php?id=' + productID;
+              if(confirm("Supprimer le produit ?")) {
+                var url = 'Delproduct.php?id=' + productID;
 
-              fetch(url, { method: 'GET' } )
-                .then((data) => {
-                  this.prod = data;
-                  this.getProducts()
-                })
-                .catch((err)=>console.error(err))
-
+                fetch(url, { method: 'GET' } )
+                  .then((data) => {
+                    this.prod = data;
+                    this.getProducts()
+                  })
+                  .catch((err)=>console.error(err))
+              }
             },
 
             getProducts() {

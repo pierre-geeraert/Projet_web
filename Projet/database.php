@@ -33,10 +33,10 @@ class Database
     }
 
   // Query method
-  public function query($query)
-  {
-      $this->_stmt = $this->_connect->prepare($query);
-  }
+    public function query($query)
+    {
+        $this->_stmt = $this->_connect->prepare($query);
+    }
 
   // execute method
     public function execute()
