@@ -1,10 +1,8 @@
 <?php
-
 require 'database.php';
 require 'panier.class.php';
 $DB = new Database();
 $panier = new panier($DB);
-
 ?>
 
 <html>
@@ -22,6 +20,8 @@ $panier = new panier($DB);
     <header>
       <?php include("header.php"); ?>  
     </header>
+
+  <section>
     <div class="best_sell">
       <p class="titreboutique">Meilleures ventes :</p>
       <div class="flex-container" id="best">
@@ -50,7 +50,6 @@ $panier = new panier($DB);
           data: {
             best: [],
           },
-
           created: function () {
             fetch('BestSell.php', {
               method: 'GET',
@@ -59,70 +58,12 @@ $panier = new panier($DB);
             .catch((err)=>console.error(err))
           } 
         })
-
       </script>
-
-    </div>
-
-        <div class="shop_products">
-          <p class="titreboutique">Liste des produits en vente :</p>
-          <?php include("search_bar.php"); ?>
+</section>
 
 
-            <div class="flex-container" id="best">
-              <div class="wrapper3" v-for="b in best">
 
-            <div class="flex-container" id="prod">
-              <div class="wrapper3" v-for="t in prod">
-
-                <div class="product-img">
-                  <img :src="`Images/Produits/${t.url}`">
-                </div>
-
-                <div class="product-info">
-                  
-                  <div class="product-text">
-
-                    <h1 > {{b.name}} </h1>
-                    <p>  {{b.description}} </p>
-
-                    <h1> {{t.name}} </h1>
-                    <p>  {{t.description}} </p>
-
-                  </div>
-
-                  <div class="product-price-btn">
-                    <p> {{t.price}} €</p>
-                    <a  :href="`AddPanier.php?id=${t.product_id}`"><button type="button" >Acheter</button></a>
-                    <a  :href="`Delproduct.php?id=${t.product_id}`"><button type="button" >Supprimer</button></a>
-
-                  </div>
-
-                </div>
-              </div>
-
-            </div>  
-            
-        <script>
-      let t = new Vue({
-          el: '#prod',
-          data: {
-              prod: [],
-          },
-
-          created: function () {
-            fetch('search.php', {
-              method: 'GET',
-            }).then((res) => res.json())
-            .then((data) =>  this.prod = data)
-            .catch((err)=>console.error(err))
-          }
-             
-     
-      })
-    </script>     
-
-
+<section>
       
 </div>
       
@@ -161,16 +102,13 @@ $panier = new panier($DB);
           data: {
               prod: [],
           },
-
           created: function () {
             this.getProducts()
           },
-
           methods : {
             deleteP( productID ) {
               if(confirm("Supprimer le produit ?")) {
                 var url = 'Delproduct.php?id=' + productID;
-
                 fetch(url, { method: 'GET' } )
                   .then((data) => {
                     this.prod = data;
@@ -179,14 +117,12 @@ $panier = new panier($DB);
                   .catch((err)=>console.error(err))
               }
             },
-
             getProducts() {
               
               fetch('sell_products.php', { method: 'GET' })
                 .then((res) => res.json())
                 .then((data) =>  this.prod = data)
                 .catch((err)=>console.error(err))
-
             }
           }
              
@@ -198,7 +134,52 @@ $panier = new panier($DB);
       
 </div>
       
+    </section>
 
+    <section>
+   
+    <div id="app">
+    
+    <div v-for="item in filteredItems" >
+      <p>{{item.name}}<p>
+    </div>
+    
+    <input type="text" v-model="search">
+    
+  </div>  
+  <script>
+
+    const app = new Vue({
+  
+  el: '#app',
+  
+  data: {
+     search: '',
+     items: []
+       
+  },
+  created: function () {
+            this.getProducts()
+          },
+          computed: {
+    filteredItems() {
+      return this.items.filter(item => {
+         return item.type.indexOf(this.search.toLowerCase()) > -1
+      })
+    }
+  },
+  getProducts() {
+              
+              fetch('sell_products.php', { method: 'GET' })
+                .then((res) => res.json())
+                .then((data) =>  this.item = data)
+                .catch((err)=>console.error(err))
+            },
+  
+})
+    </script>
+    
+</section>
      
 
     
