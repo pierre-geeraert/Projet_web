@@ -23,11 +23,12 @@ echo '
 
 		<div class="form-style-6">
 		<h1>Nouvel Evénement</h1>
-		<form  method="post" action="CreateEvent.php">
+		<form  method="post" action="CreateEvent.php" enctype="multipart/form-data">
 			<input type="text" name="title" placeholder="Titre de l\'événement"/>
 			<input type="text" name="desc" placeholder="Description de l\'événement"/> 
 			<input type="text" name="date" placeholder="Date de l\'événement (ex: 2018-01-30)"/>
 			<input type="file" name="image" />
+			
 			<input type="submit" value="Envoyer" />
 		</form>
 		</div>

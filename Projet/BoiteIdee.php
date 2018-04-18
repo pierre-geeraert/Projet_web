@@ -67,7 +67,7 @@
 						
 						<a href=\'#\' onclick=\'document.getElementById("'.$event_var.'").submit()\'> Voter ('.$nbr_vote.') </a>
 						';
-						if (isset($_SESSION)) { 
+						if (isset($_SESSION['statut'])) { 
 							if($_SESSION['statut'] === "BDE"){ 
 								echo '
 									<form id="'.$var.'" action="validate.php" method="post">

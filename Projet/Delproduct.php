@@ -1,15 +1,20 @@
 <?php 
 
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
+
 require 'database.php';
 
 $DB = new Database();
 
 if (isset($_GET['id'])) {
-    $DB->query("DELETE FROM products WHERE product_id =:id LIMIT 1");
-    $DB->bindParam(':id', $_GET['id']);
+
+    $DB->query("DELETE FROM products WHERE `product_id` = :pID LIMIT 1");
+    $DB->bindParam(':pID', htmlspecialchars(strip_tags($_GET['id'])));
     $DB->execute();
 
     $DB->closeCursor();
 } else {
-    die('Pas suppp');
+    throw new Exception("L'id n'existe pas.");
 }

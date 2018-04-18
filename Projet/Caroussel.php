@@ -18,7 +18,7 @@
     <!-- Flickity HTML init -->
     <div class="carousel" data-flickity='{ "autoPlay": true,"wraparound":true}'>
       <div class="carousel-cell"> <img src="/image/tapis.png"></div>
-      <div class="carousel-cell"></div>
+      <div class="carousel-cell"> <img src="/image/photos/5d578fc81c460f36796fac6920d51866.jpg"></div>
       <div class="carousel-cell"></div>
       <div class="carousel-cell"></div>
       <div class="carousel-cell"></div>

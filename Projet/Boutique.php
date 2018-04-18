@@ -136,7 +136,7 @@ $panier = new panier($DB);
                   <div class="product-price-btn">
                     <p> {{t.price}} €</p>
                     <a  :href="`AddPanier.php?id=${t.product_id}`"><button type="button" >Acheter</button></a>
-                    <a  :href="`Delproduct.php?id=${t.product_id}`"><button type="button" >Supprimer</button></a>
+                    <a v-on:click="deleteP(t.product_id)"><button type="button" >Supprimer</button></a>
 
                   </div>
 
@@ -145,7 +145,7 @@ $panier = new panier($DB);
 
             </div>  
             
-        <script>
+            <script>
       let t = new Vue({
           el: '#prod',
           data: {
@@ -153,11 +153,31 @@ $panier = new panier($DB);
           },
 
           created: function () {
-            fetch('sell_products.php', {
-              method: 'GET',
-            }).then((res) => res.json())
-            .then((data) =>  this.prod = data)
-            .catch((err)=>console.error(err))
+            this.getProducts()
+          },
+
+          methods : {
+            deleteP( productID ) {
+              if(confirm("Supprimer le produit ?")) {
+                var url = 'Delproduct.php?id=' + productID;
+
+                fetch(url, { method: 'GET' } )
+                  .then((data) => {
+                    this.prod = data;
+                    this.getProducts()
+                  })
+                  .catch((err)=>console.error(err))
+              }
+            },
+
+            getProducts() {
+              
+              fetch('sell_products.php', { method: 'GET' })
+                .then((res) => res.json())
+                .then((data) =>  this.prod = data)
+                .catch((err)=>console.error(err))
+
+            }
           }
              
      
