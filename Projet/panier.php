@@ -84,7 +84,7 @@ $panier = new panier($DB);
 			<?php endforeach; ?>
 			
 	</form>
-			<a href="buy.php"> Acheter </a>
+			<a href="mailproduct.php"> Acheter </a>
 			<?php 
 		
 
