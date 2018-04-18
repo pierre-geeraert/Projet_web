@@ -67,6 +67,7 @@ $panier = new panier($DB);
 		foreach ($products as $product) :
 		$var++;
 		${'id'.$var}=$product['product_id'];
+		${'nb'.$var}=$_SESSION['panier'][$product['product_id']];
 
 
 		?>
@@ -87,17 +88,23 @@ $panier = new panier($DB);
 			<input type="submit" value="Recalculer">
 	</div>
 	</form>
-			<a href="buy.php"> Acheter </a>
-			<?php 
-			
+	
 
-			echo $id1;
-			echo $id2;
-			echo $id3;
+		<ul>
+			<form method="post" action="buy.php">
+				<?php 
+					for($compteur=1; $compteur<=$var; $compteur++){
 
-
-		
-			?>
+						echo '
+							<input name="'.'id'.$compteur.'" type="hidden" value="'.${'id'.$compteur}.'"/>
+							<input name="'.'nb'.$compteur.'" type="hidden" value="'.${'nb'.$compteur}.'"/>
+						';
+					}	
+				?>
+				<input name="var" type="hidden" value=<?= $var?> />
+				<input type="submit" name="submit" value="Acheter" />
+			</form>
+		</ul>
 </div>
 	 
 	

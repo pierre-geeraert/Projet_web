@@ -1,7 +1,9 @@
 <?php
+
     require('database.php');
 
     $search = $_POST['recherche'];
+	echo $search;
 
     $DB = new Database;
 
@@ -11,3 +13,4 @@
 
     echo json_encode($Jsearch);
     
+?>

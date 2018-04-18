@@ -94,22 +94,7 @@ $panier = new panier($DB);
             </div>  
             
         <script>
-      let t = new Vue({
-          el: '#prod',
-          data: {
-              prod: [],
-          },
 
-          created: function () {
-            fetch('search.php', {
-              method: 'GET',
-            }).then((res) => res.json())
-            .then((data) =>  this.prod = data)
-            .catch((err)=>console.error(err))
-          }
-             
-     
-      })
     </script>     
 
 

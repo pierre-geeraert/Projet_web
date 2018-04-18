@@ -21,10 +21,10 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
     
-    <form method="POST" action="search.php"> 
+    <form> 
 
-        <input type="text" id="recherche" name="recherche" />
-        <input type="submit" value="ok" />
+        <input type="text" id="recherche" />
+ 
         <script>
 
         $('#recherche').autocomplete({
