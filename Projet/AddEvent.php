@@ -28,7 +28,6 @@ echo '
 			<input type="text" name="desc" placeholder="Description de l\'événement"/> 
 			<input type="text" name="date" placeholder="Date de l\'événement (ex: 2018-01-30)"/>
 			<input type="file" name="image" />
-            <input name="id" type="hidden" value="'.${'id'.$var}.'"/>
 			
 			<input type="submit" value="Envoyer" />
 		</form>
