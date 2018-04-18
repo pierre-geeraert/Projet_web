@@ -1,7 +1,10 @@
 <?php
 session_start();
 
-$bdd = new PDO('mysql:host=mysql-pi-ux-ce.alwaysdata.net;dbname=pi-ux-ce_web;charset=utf8', 'pi-ux-ce_web', 'cesi');
+
+require 'database.php';
+$DB = new Database();
+
 
 // we find our title , description date and user_id from post or session var
 $title=$_POST['title'];

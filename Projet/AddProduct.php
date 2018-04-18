@@ -14,8 +14,8 @@
 
     </header>
 
-<?php
-echo '	
+
+
 
 <body>
 	<div class="wrapper">
@@ -39,8 +39,7 @@ echo '
 	</div>
 </body>
 
-';
-?>	
+
 <footer>
 	
 <?php include("footer.php"); ?>

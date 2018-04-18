@@ -134,14 +134,13 @@ $panier = new panier($DB);
 </div>
       
  <div class="shop_products">
-            <p class="titreboutique">Liste des produits en vente :</p>
+            
             
 
-            <div class="flex-container" id="prod">
-              <div class="wrapper3" v-for="t in prod">
+      
 
             <div class="flex-container" id="best">
-              <div class="wrapper3" v-for="(b, index) in best">
+              <div class="wrapper3" v-for="b in best">
 
                 <div class="product-img">
                   <img :src="`Images/Produits/${b.url}`">
