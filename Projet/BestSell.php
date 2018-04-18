@@ -11,4 +11,4 @@
     $DB->closeCursor();
 
     echo json_encode($bestsell);
-    
+?>   

@@ -14,38 +14,38 @@
 
     </header>
 
-<?php
-echo '	
+	<?php
+		echo '	
 
-<body>
-	<div class="wrapper">
-    <div class="wrapper2">
+		<body>
+			<div class="wrapper">
+			<div class="wrapper2">
 
-		<div class="form-style-6">
-		<h1>Nouveeau produit</h1>
-		<form  method="post" action="CreateProduct.php" enctype="multipart/form-data">
-			<input type="text" name="title" placeholder="Nom du produit"/>
-			<input type="text" name="desc" placeholder="Description du produit"/> 
-			<input type="text" name="prix" placeholder="Prix du produit)"/>
-			<input type="file" name="image" />
+				<div class="form-style-6">
+				<h1>Nouveeau produit</h1>
+				<form  method="post" action="CreateProduct.php" enctype="multipart/form-data">
+					<input type="text" name="title" placeholder="Nom du produit"/>
+					<input type="text" name="desc" placeholder="Description du produit"/> 
+					<input type="text" name="prix" placeholder="Prix du produit)"/>
+					<input type="file" name="image" />
+					
+					<input type="submit" value="Envoyer" />
+				</form>
+				</div>
+
+
 			
-			<input type="submit" value="Envoyer" />
-		</form>
-		</div>
+			</div>
+			</div>
+		</body>
 
-
-	
-    </div>
-	</div>
-</body>
-
-';
-?>	
-<footer>
-	
-<?php include("footer.php"); ?>
-	
-</footer>
+		';
+	?>	
+	<footer>
+		
+	<?php include("footer.php"); ?>
+		
+	</footer>
 
 </html>
 
