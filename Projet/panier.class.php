@@ -38,7 +38,7 @@ class panier{
 		if(empty($ids)){
 			$products = array();
 		}else{
-			$products = $this->DB->query('SELECT product_id, price FROM products WHERE product_id IN ('.implode(',',$ids).')');
+			$products = $this->DB->query('SELECT product_id, price FROM products WHERE product_id IN ('.implode(',',$ids).')',array());
 		}
 		foreach( $products as $product ) {
 			$total += $product->price * $_SESSION['panier'][$product->product_id];

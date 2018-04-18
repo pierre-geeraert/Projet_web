@@ -1,12 +1,10 @@
-
-
 <?php
 
 require 'database.php';
 require 'panier.class.php';
 $DB = new Database();
 $panier = new panier($DB);
-    
+
 ?>
 
 
@@ -56,21 +54,28 @@ $panier = new panier($DB);
 			</div>
 
 			<?php
-			$ids = array_keys($_SESSION['panier']);
-			if(empty($ids)){
-				$products = array();
-			}else{
-				$products = $DB->query('SELECT * FROM products WHERE product_id IN ('.implode(',',$ids).')');
-			}
-			foreach($products as $product):
-			?>
+		$ids = array_keys($_SESSION['panier']);
+		if (empty($ids)) {
+			$products = array();
+		} else {
+			$DB->query('SELECT * FROM products WHERE product_id IN (' . implode(',', $ids) . ')');
+			
+		}
+		$products = $DB->fetchAll();
+			$DB->closeCursor();
+		foreach ($products as $product) :
+			
+
+
+		?>
+			
 			<div id="Productlist">
-				<span class="name"style="width:25%"><?= $product->name; ?></span>
-				<span class="price"style="width:25%"><?= number_format($product->price,2,',',' '); ?> €</span>
-				<span class="quantity" style="width:25%"><input type="text" name="panier[quantity][<?= $product->product_id; ?>]" value="<?= $_SESSION['panier'][$product->product_id]; ?>"></span>
+				<span class="name"style="width:25%"><?= $product['name']; ?></span>
+				<span class="price"style="width:25%"><?= number_format($product['price'], 2, ',', ' '); ?> €</span>
+				<span class="quantity" style="width:25%"><input type="text" name="panier[quantity][<?= $product['product_id']; ?>]" value="<?= $product['product_id'] ?>"></span>
 				
 				<span class="action" style="width:20%">
-					<a href="panier.php?delPanier=<?= $product->product_id; ?>" class="del"><img src="Images/del.png" height="50"></a>
+					<a href="panier.php?delPanier=<?= $product['product_id']; ?>" class="del"><img src="Images/del.png" height="50"></a>
 				</span>
 			</div>
 			<?php endforeach; ?>
@@ -85,7 +90,7 @@ $panier = new panier($DB);
 	 
 
 
-
+<?php session_unset(); ?>
 	
 	<footer>
 	<?php include("footer.php"); ?>

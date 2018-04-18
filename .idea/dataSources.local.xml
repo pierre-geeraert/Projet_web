@@ -7,8 +7,7 @@
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
-      <secret-storage>master_key</secret-storage>
-      <user-name>pi-ux-ce_web</user-name>
+      <user-name>pi-ux-ce</user-name>
       <introspection-schemas>*:pi-ux-ce_web</introspection-schemas>
     </data-source>
   </component>
