@@ -7,7 +7,8 @@ $user_id = $_SESSION['id'];
 
 
 
-for($var=1; $var<=$nbr ; $var++){
+for($var=1; $var<=$nbr ; $var++)
+{
 	if (isset($_POST[$var])) {
 		$bdd->query('call notif_insert_nocif("'.$user_id.'","'.$_POST[$var].'")');
 	}
