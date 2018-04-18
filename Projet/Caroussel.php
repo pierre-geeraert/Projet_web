@@ -17,12 +17,12 @@
 
     <!-- Flickity HTML init -->
     <div class="carousel" data-flickity='{ "autoPlay": true,"wraparound":true}'>
-      <div class="carousel-cell"> <img src="/image/tapis.png"></div>
-      <div class="carousel-cell"> <img src="/image/photos/5d578fc81c460f36796fac6920d51866.jpg"></div>
-      <div class="carousel-cell"></div>
-      <div class="carousel-cell"></div>
-      <div class="carousel-cell"></div>
-    </div>
+      <div class="carousel-cell"> <img src="Images\Evenements\Evenement\confenrece.jpg"></div>
+      <div class="carousel-cell"><img src="Images\Evenements\Evenement\foot.jpg"></div>
+      <div class="carousel-cell"><img src="Images\Evenements\Evenement\LAN.jpg"></div>
+      <div class="carousel-cell"><img src="Images\Evenements\Evenement\paintball.jpg"></div>
+      <div class="carousel-cell"><img src="Images\Evenements\Evenement\Soirée.jpg"></div>
+    </div>  
 </div>
 </body>
 </html>
