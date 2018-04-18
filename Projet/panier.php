@@ -80,6 +80,7 @@ $panier = new panier($DB);
 			<input type="submit" value="Recalculer">
 	</div>
 	</form>
+			<a href="buy.php"> Acheter </a>
 </div>
 	 
 

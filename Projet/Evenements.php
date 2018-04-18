@@ -26,7 +26,7 @@
 		
 			
 				<?php	
-					if (isset($_SESSION)) { 
+					if (isset($_SESSION['statut'])) { 
 						if($_SESSION['statut'] === "BDE"){ 
 							echo '
 							<div class="new_event">
