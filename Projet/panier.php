@@ -85,15 +85,6 @@ $panier = new panier($DB);
 			<?php endforeach; ?>
 			
 	</form>
-<<<<<<< HEAD
-	
-=======
-			<a href="mailproduct.php"> Acheter </a>
-			<?php 
-		
-
->>>>>>> 4c6a92be9726aac87c1e45041500fcb73f173bbd
-
 		<ul>
 			<form method="post" action="buy.php">
 				<?php 

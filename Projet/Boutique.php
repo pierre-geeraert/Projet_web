@@ -63,8 +63,24 @@ $panier = new panier($DB);
     <header>
         <?php include("header.php"); ?>  
     </header>
+	
+	
+	
 
     <div id="wrapper">
+	
+				<?php	
+					if (isset($_SESSION['statut'])) { 
+						if($_SESSION['statut'] === "BDE"){ 
+							echo '
+							<div class="new_event">
+								<fieldset class="inner">
+								<a href="AddProduct.php"> Ajouter article </a>
+								</fieldset>
+							</div>	';
+						}
+					}			
+				?>
         <section>
             <div class="shop_products">
                 <p class="titreboutique">Liste des produits en vente :</p>
@@ -90,7 +106,11 @@ $panier = new panier($DB);
 
                       <div class="product-price-btn">
                         <p> {{t.price}} €</p>
-                        <a  :href="`AddPanier.php?id=${t.product_id}`"><button type="button" >Acheter</button></a>
+						
+
+								<a  :href="`AddPanier.php?id=${t.product_id}`"><button type="button" >Acheter</button></a>
+
+						
                         <a v-on:click="deleteP(t.product_id)"><button type="button" >Supprimer</button></a>
                       </div>
 
@@ -196,4 +216,4 @@ $panier = new panier($DB);
 	      <?php include("footer.php"); ?>
     </footer>  
   </body>
-</html
+</html>

@@ -26,7 +26,7 @@
 
 <div class="form-style-6">
 	<h1>Quel est votre idée</h1>
-	form  method="post" action="AddIdea.php">
+	<form  method="post" action="AddIdea.php">
 	<input type="text" name="title" placeholder="Titre de l'idée"/>
 	<input type="text" name="desc" placeholder="Description de l'idée"/> 
 	<input type="submit" value="Envoyer" />
