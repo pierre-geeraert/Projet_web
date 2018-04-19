@@ -86,18 +86,43 @@
           }
         }			
       ?>
+	  <?php
+	  
+		// Request for the auto-completion
+	  
+		$bdd = new PDO('mysql:host=mysql-pi-ux-ce.alwaysdata.net;dbname=pi-ux-ce_web;charset=utf8', 'pi-ux-ce_web', 'cesi');
+		$requete = $bdd->query('SELECT * FROM products');
+		
+		// Have the maximum number of names 
+		// Save each name in a variable
+		
+		$nb_max_name=0;
+		while($donnees = $requete->fetch()){
+			$nb_max_name++;
+			${'product_name'.$nb_max_name} = $donnees['name'];
+		}
+	  ?>
         <section>
             <div class="shop_products">
                 <p class="titreboutique">Liste des produits en vente :</p>
+				
+				<!-- " list_product to create the auto-completion list -->
 
                 <div class="form-group">
                   <label for="terme"> Mot clé de la recherche</label>
-                  <input type="text" id="recherche" name="terme" v-model="searchName" v-on:change="getProducts()">
-                  <script>
-                    $('#recherche').autocomplete({
-                    source : 'list.php'
-                    });
-                  </script>
+                  <input list="list_product" type="text" name="terme" v-model="searchName" v-on:change="getProducts()">
+				  
+				  <!-- the list of the name product-->
+				  
+				  <datalist id="list_product">
+						<?php
+							for($var2=1; $var2<=$nb_max_name; $var2++){
+								echo '
+									<option value="'.${'product_name'.$var2}.'">
+								';
+							}
+						?>
+					</datalist>
                 </div>
                 
                 <div class="flex-container">
