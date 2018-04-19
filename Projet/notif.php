@@ -1,10 +1,12 @@
+<!DOCTYPE html>
+
 <!--####################################
  Auteur : Groupe 3
  Date : 2018
  Contexte : Projet Web Exia CESI
  #######################################-->
 
-<html>
+<html style="overflow-x: hidden;">
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="css/style.css" />
@@ -78,7 +80,7 @@
 		
 		// Cette partie permet de signaler qu'un ou plusieurs utilisateurs ont achetés des produits 
 		
-		$reponse4 = $bdd->query('SELECT user_id FROM orders WHERE paid="0"');  // Selectionne l'ID des utilisateurs qui ont acheté un produit
+		$reponse4 = $bdd->query('SELECT user_id FROM orders WHERE paid="0" and validation="0"');  // Selectionne l'ID des utilisateurs qui ont acheté un produit
 		$nbr_user=0;
 		while($donnees4 = $reponse4->fetch())
 		{

@@ -1,10 +1,12 @@
+<!DOCTYPE html>
+
 <!--####################################
  Auteur : Groupe 3
  Date : 2018
  Contexte : Projet Web Exia CESI
  #######################################-->
 
-<html>
+<html style="overflow-x: hidden;">
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="css/style.css" />
@@ -34,15 +36,15 @@
 					
 			<?php
 									
-				$bdd = new PDO('mysql:host=mysql-pi-ux-ce.alwaysdata.net;dbname=pi-ux-ce_web;charset=utf8', 'pi-ux-ce_web', 'cesi'); // Connexion à la base de donnée
+				$bdd = new PDO('mysql:host=mysql-pi-ux-ce.alwaysdata.net;dbname=pi-ux-ce_web;charset=utf8', 'pi-ux-ce_web', 'cesi'); // Connect to the databse
 								
-				$reponse = $bdd->query('SELECT event, description, event_id FROM events WHERE validation="0"'); // réponse de la base de donnée
+				$reponse = $bdd->query('SELECT event, description, event_id FROM events WHERE validation="0"'); // database response
 				
 				$nbr_event=0;
-				while ($donnees = $reponse->fetch()){ // permet de lire les données présente dans $reponse les unes à la suite des autres
+				while ($donnees = $reponse->fetch()){ // reads the data in $reponse one after the other
 					$nbr_event++;
 					
-					// Puis on stocke les valeurs des trois différents champs dans les 3 variables suivantes :
+					// Then we store the values of the three different fields in the following 3 variables :
 					
 					${'event'.$nbr_event}=$donnees['event'];
 					${'description'.$nbr_event}=$donnees['description'];
@@ -53,15 +55,15 @@
 				{
 					$event_var='event'.$var;
 
-					// Permet de récuperer le nombre de vote de chaque idée
+					// Retrieve the number of votes for each idea
 					
 					$reponse2= $bdd->query('call nb_vote('.${'id'.$var}.')');
 					$donnees2=$reponse2->fetch();
 					$nbr_vote=$donnees2['nbr_vote'];
-					$reponse2->closeCursor(); //  Ferme le curseur, permettant à la requête d'être de nouveau exécutée
+					$reponse2->closeCursor(); //  Closes the cursor, allowing the request to be executed again
 					
-					// Affiche le code HTML avec des variables php
-					// La balise <fieldset> permet délimiter graphiquement une zone
+					// 	Displays HTML code with php variables
+					// The <fieldset> delimit a zone graphically 
 					
 					echo ' 
 						<div id=container>
@@ -77,14 +79,14 @@
 								
 								<a href=\'#\' onclick=\'document.getElementById("'.$event_var.'").submit()\'> Voter ('.$nbr_vote.') </a>'; 
 								
-								// Vérifie si l'utilisateur est un membre du BDE, si ce n'est pas le cas, il n'affiche pas le bouton " valider l'idée "
+								// Checks if the user is a member of the BDE, if not, it does not display the button " valider l'idée "
 								
 								if (isset($_SESSION['statut'])) 
 								{ 
 									if($_SESSION['statut'] === "BDE"){ 
 									
-										// Envoi l'ID de l'idée ,le nombre total d'idée, et la date de l'idée
-										// La valeur de l'ID ( dans <form > ) est variable pour pouvoir assigner un bouton " valider " à chaque idée
+										// Sends the idea ID ,the total number of ideas, and the date of the idea
+										// The value of the ID ( in <form > ) is variable to be able to assign a "valider" button to each idea
 									
 										echo '
 										<form id="'.$var.'" action="validate.php" method="post">

@@ -6,8 +6,13 @@ $nbr = $_POST['nbr_event'];
 $user_id = $_SESSION['id'];
 $date= $_POST['date'];
 
+// Look for the great button
+
 for($var=1; $var<=$nbr ; $var++){
 	if (isset($_POST[$var])) {
+		
+		// Validate the idea
+		
 		$bdd->query('call validation_event('.$_POST[$var].','.$user_id.',"'.$date.'" )');
 	}
 }

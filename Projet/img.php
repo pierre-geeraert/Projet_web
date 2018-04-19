@@ -7,16 +7,22 @@ $user_id=$_SESSION['id'];
 
 $extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png' );
 
-//1. strrchr renvoie l'extension avec le point (« . »).
-//2. substr(chaine,1) ignore le premier caractère de chaine.
-//3. strtolower met l'extension en minuscules.
+// strrchr returns the extension with the point (« . »).
+// substr(chaine,1) ignores the first string character.
+// strtolower puts the extension in lower case.
 
 //find extension of pictures
 $extension_upload = strtolower(  substr(  strrchr($_FILES['image']['name'], '.')  ,1)  );
 
+// Generate a name
+
 $num = md5(uniqid(rand(), true));
 
-$nom = "image/photos/{$num}.{$extension_upload}";
+// Create the name picture
+
+$nom = "image/{$num}.{$extension_upload}";
+
+// Check if the user participated at the event
 
 try {
 

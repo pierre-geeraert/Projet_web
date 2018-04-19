@@ -63,7 +63,7 @@ font-style: normal;
 
 .even1 {
 	margin: 2%;
-	margin-left: calc(48% - 350px);
+	margin-left: 15%;
 }
 .even_individuel {
 	margin: 2%;
@@ -84,7 +84,7 @@ font-style: normal;
 
 .even2 {
 	margin: 2%;
-	margin-left: calc(48% - 350px);
+	margin-left: 15%;
 }
 
 .even2 a:hover{
@@ -126,7 +126,7 @@ fieldset
   -moz-border-radius:8px;	
   border-radius:8px;
   background-color:#C2242A;
-  max-width:700px;
+  max-width:70%;
   padding:16px;	
 }
 

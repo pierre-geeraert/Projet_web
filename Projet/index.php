@@ -6,7 +6,7 @@
  Contexte : Projet Web Exia CESI
  #######################################-->
 
-<html>
+<html style="overflow-x: hidden;">
 
     <head>
         <meta charset="utf-8" />

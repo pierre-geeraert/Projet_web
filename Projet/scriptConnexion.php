@@ -4,7 +4,7 @@ $bdd = new PDO('mysql:host=mysql-pi-ux-ce.alwaysdata.net;dbname=pi-ux-ce_web;cha
 $login = $_POST['login'];
 $pass = $_POST['motdepasse'];
 
-//  Récupération de l'utilisateur et de son pass hashé
+//  Get the informations about the user 
 
 $req = $bdd->prepare('SELECT name, surname, password, status, user_id FROM users WHERE email = :login');
 $req->execute(array(':login' => $login));
@@ -22,6 +22,9 @@ else
     if ($pass === $resultat['password']) {
 
         session_start();
+		
+		// put the informations in the global variable
+		
 		$_SESSION['name'] = $resultat['name'];
 		$_SESSION['surname'] = $resultat['surname'];
         $_SESSION['login'] = $login;

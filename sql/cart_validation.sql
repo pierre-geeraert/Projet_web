@@ -17,6 +17,19 @@ WHERE produt_id IN (
     )
 );
 
+UPDATE orders
+SET paid = 1
+WHERE order_id =(
+        SELECT order_id
+        FROM orders
+        WHERE user_id = user_id_in
+        ORDER BY order_id DESC
+        LIMIT 1));
+
+
+INSERT INTO orders (order_date, paid, user_id)
+VALUES (NOW(), '0', user_id_in);
+
 
 END |
 DELIMITER ;
