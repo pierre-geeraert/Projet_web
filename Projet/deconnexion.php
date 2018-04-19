@@ -1,5 +1,8 @@
-<?php   
-	session_start(); //to ensure you are using same session
+<?php  
+	session_start(); 
+	
+	// Assign null value to all variables
+	
 	$_SESSION['login']=null;
 	$_SESSION['name'] = null;
 	$_SESSION['surname'] = null;

@@ -1,4 +1,3 @@
-
 <script language="javascript">
     alert("Vous n'avez pas participez à l'événement.");
 </script>

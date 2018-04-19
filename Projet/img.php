@@ -7,16 +7,22 @@ $user_id=$_SESSION['id'];
 
 $extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png' );
 
-//1. strrchr renvoie l'extension avec le point (« . »).
-//2. substr(chaine,1) ignore le premier caractère de chaine.
-//3. strtolower met l'extension en minuscules.
+// strrchr returns the extension with the point (« . »).
+// substr(chaine,1) ignores the first string character.
+// strtolower puts the extension in lower case.
 
 //find extension of pictures
 $extension_upload = strtolower(  substr(  strrchr($_FILES['image']['name'], '.')  ,1)  );
 
+// Generate a name
+
 $num = md5(uniqid(rand(), true));
 
+// Create the name picture
+
 $nom = "image/photos/{$num}.{$extension_upload}";
+
+// Check if the user participated at the event
 
 try {
 
@@ -25,7 +31,8 @@ try {
         $requete2->bindValue(':event_id', $event_id_in, PDO::PARAM_STR);
         $requete2->execute();
 
-} catch (PDOException $e) {
+    } catch (PDOException $e) 
+{
     echo $e;
 }
 
@@ -34,27 +41,32 @@ $bool_verif= $donnees['bool_present'];
 
 echo $bool_verif;
 if(!$bool_verif){header('location: alert.php');}
-if($bool_verif) {
+if($bool_verif) 
+{
 
     try {
         //Use to upload and move pictures
         $resultat = move_uploaded_file($_FILES['image']['tmp_name'], $nom);
-        if (!$resultat) {
-            throw new Exception('Could not move file');
-        }
-    } catch (Exception $e) {
-        die ('File did not upload: ' . $e->getMessage());
-    }
+        if (!$resultat)
+            {
+                throw new Exception('Could not move file');
+            }
+        } catch (Exception $e) 
+            {
+            die ('File did not upload: ' . $e->getMessage());
+            }
 
 
-    if ($resultat) {
+    if ($resultat) 
+    {
         try {
             $requete1 = $bdd2->prepare("call add_picture(:url,:user_id,:event_id)");
             $requete1->bindValue(':url', $nom, PDO::PARAM_STR);
             $requete1->bindValue(':user_id', $user_id, PDO::PARAM_STR);
             $requete1->bindValue(':event_id', $event_id_in, PDO::PARAM_STR);
             $requete1->execute();
-        } catch (PDOException $e) {
+             } catch (PDOException $e)
+        {
             echo $e;
         }
 

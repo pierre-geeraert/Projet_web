@@ -8,8 +8,10 @@ $nbr = $_POST['nbr_event'];
 
 
 
-for($var=1; $var<=$nbr ; $var++){
-    if (isset($_POST[$var])) {
+for($var=1; $var<=$nbr ; $var++)
+{
+    if (isset($_POST[$var])) 
+    {
         //$bdd->query('call subscribe_event('.$user_id.', '.$_POST[$var].')');
         $event_id=$_POST[$var];
 
@@ -25,7 +27,8 @@ try {
     $requete->bindValue(':event_id', $event_id, PDO::PARAM_STR);
     $requete->execute();
 
-} catch (PDOException $e) {
+    } catch (PDOException $e)
+{
     echo $e;
 }
 

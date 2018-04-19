@@ -4,12 +4,14 @@
 session_start();
 $bdd = new PDO('mysql:host=mysql-pi-ux-ce.alwaysdata.net;dbname=pi-ux-ce_web;charset=utf8', 'pi-ux-ce_web', 'cesi');
 
-try {
+try 
+{
 
     $requete2 = $bdd->query("call download");
 
 
-} catch (PDOException $e) {
+} catch (PDOException $e) 
+{
     echo $e;
 }
 
@@ -20,7 +22,8 @@ $donnees = $requete2->fetchAll();
 $zip = new ZipArchive();
 $filename = "./images.zip";
 
-if ($zip->open($filename, ZipArchive::CREATE)!==TRUE) {
+if ($zip->open($filename, ZipArchive::CREATE)!==TRUE) 
+{
     exit("Impossible d'ouvrir le fichier <$filename>\n");
 }
 //add try catch
@@ -31,7 +34,8 @@ if ($zip->open($filename, ZipArchive::CREATE)!==TRUE) {
 
 
 $tt = count($donnees);
-for ($i=0; $i < $tt; $i++) {
+for ($i=0; $i < $tt; $i++) 
+{
     //echo $donnees[$i]['url'];
     $zip->addFile($donnees[$i]['url']);
 }
