@@ -6,7 +6,7 @@
  Contexte : Projet Web Exia CESI
  #######################################-->
 
-<html>
+<html style="overflow-x: hidden;">
 
     <head>
         <meta charset="utf-8" />
@@ -26,6 +26,9 @@
 		
 			
 	<?php	
+	
+		// A member of the BDE team can add an event
+	
 		if (isset($_SESSION['statut']))
 		{ 
 			if($_SESSION['statut'] === "BDE")
@@ -37,7 +40,22 @@
 				</fieldset>
 				</div>	';
 			}
-		}			
+		}	
+
+		// A tutor can download all web site picture
+		
+		if (isset($_SESSION['statut']))
+		{ 
+			if($_SESSION['statut'] === "Tuteur")
+			{ 
+				echo '
+				<div class="new_event">
+				<fieldset class="inner">
+				<a href="dl.php"> Enregistrer les images </a>
+				</fieldset>
+				</div>	';
+			}
+		}		
 	?>																	
 
 
@@ -48,7 +66,7 @@
 		<?php
 
 		$bdd = new PDO('mysql:host=mysql-pi-ux-ce.alwaysdata.net;dbname=pi-ux-ce_web;charset=utf8', 'pi-ux-ce_web', 'cesi');
-		
+		$bdd2 = new PDO('mysql:host=mysql-pi-ux-ce.alwaysdata.net;dbname=pi-ux-ce_web;charset=utf8', 'pi-ux-ce_web', 'cesi');
 		// Get the event name, the description, and the event ID
 
 		$reponse = $bdd->query('call event_futur');
@@ -65,6 +83,11 @@
 
 		for($var=1; $var <= $nbr_event; $var++)
 		{	
+			$reponse2 = $bdd2->query('SELECT url FROM pictures WHERE pictures.event_id = '.${'id'.$var}.'');
+			while($donnees2 = $reponse2->fetch()){
+				$url = $donnees2['url']; 
+				$reponse2->closeCursor();
+			}
 			echo '
 			<ul>
 			<fieldset>
@@ -72,7 +95,7 @@
 			<p> > '.${'event'.$var}.' < </p>
 
 			<fieldset class="inner">
-
+			<img src="'.$url.'" width="17%">
 			<p class="description"> '.${'description'.$var}.' </p>
 
 			<form id="'.$var. '" action="participate.php" method="post">

@@ -1,8 +1,12 @@
+<!DOCTYPE html>
+
 <!--####################################
  Auteur : Groupe 3
  Date : 2018
  Contexte : Projet Web Exia CESI
  #######################################-->
+
+<html style="overflow-x: hidden;">
 
 <nav id="footer">        
 
@@ -14,3 +18,5 @@
     </div> 
 	
 </nav>
+
+</html>

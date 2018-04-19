@@ -1,10 +1,12 @@
+<!DOCTYPE html>
+
 <!--####################################
  Auteur : Groupe 3
  Date : 2018
  Contexte : Projet Web Exia CESI
  #######################################-->
 
-<html>
+<html style="overflow-x: hidden;">
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="css/style.css" />
