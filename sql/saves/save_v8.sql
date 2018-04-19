@@ -89,7 +89,7 @@ VALUES
 ((
 SELECT order_id
 FROM orders
-WHERE user_id = user_id_in),product_id_in);
+WHERE user_id = user_id_in AND paid = 0),product_id_in);
 
 
 END$$

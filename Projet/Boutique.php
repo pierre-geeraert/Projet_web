@@ -84,7 +84,12 @@
 
                 <div class="form-group">
                   <label for="terme"> Mot clé de la recherche</label>
-                  <input type="text" name="terme" v-model="searchName" v-on:change="getProducts()">
+                  <input type="text" id="recherche" name="terme" v-model="searchName" v-on:change="getProducts()">
+                  <script>
+                    $('#recherche').autocomplete({
+                    source : 'list.php'
+                    });
+                  </script>
                 </div>
                 
                 <div class="flex-container">
