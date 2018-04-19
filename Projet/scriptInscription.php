@@ -43,10 +43,10 @@
 
 
 //----------------------------------------------------------------------
-                //$to=$Email;
-                $token="1fd534473a09b2e147ef375de54d47c09ab39aec";
+
+                //$token="1fd534473a09b2e147ef375de54d47c09ab39aec";
                 //$message = 'Merci de copier le lien: http://127.0.0.1/validation_user.php/?token='.$token.'';
-                $message = "<!DOCTYPE html><body><a href=\"https://www.w3schools.com\">Visit W3Schools</a></body></html>";
+                //$message = "<!DOCTYPE html><body><a href=\"https://www.w3schools.com\">Visit W3Schools</a></body></html>";
 
 
                 echo '

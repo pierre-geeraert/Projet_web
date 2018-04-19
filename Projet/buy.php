@@ -13,7 +13,7 @@
 
 	for($nbr=1; $nbr<=$nb_product ; $nbr++){
 		
-		// get the idea of ​​the product
+		// get the id of ​​the product
 		
 		$id=$_POST['id'.$nbr];
 		
@@ -26,7 +26,7 @@
 	
 	$bdd->query('call cart_validation("'.$user_id.'")');
 
-	header('Location: Boutique.php');
+	header('Location: mailproduct.php');
 ?>
 
 
