@@ -69,10 +69,12 @@
 				foreach ($products as $product) :		
 
 				$var++;
+				
+				// Sotck l'idée du produit et la quantité de ce produit
+				
 				${'id'.$var}=$product['product_id'];
 				${'nb'.$var}=$_SESSION['panier'][$product['product_id']];
 
-				//for each product who exist , the flowwing will be display
 				?>
 			
 				<div id="Productlist">
