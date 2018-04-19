@@ -1,23 +1,23 @@
 <?php
 	session_start();
 
-	// Récupère le titre, le description, et la date du nouvel événement
+	// Retrieves the title, description, and date of the new event
 	
 	$title=$_POST['title'];
 	$desc=$_POST['desc'];
 	$date=$_POST['date'];
 	$user_id=$_SESSION['id'];
 
-	// Indique les extensions autorisées
+	// Indicates allowed extensions
 	$extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png' );
-	// récupère l'extension
+	// get the extension
 	$extension_upload = strtolower(  substr(  strrchr($_FILES['image']['name'], '.')  ,1)  );
-	// Générère un numéro aléatoirement, il servira de nom pour l'image
+	// Generates a random number, it will serve as the name for the image
 	$num = md5(uniqid(rand(), true));
-	// Associement les différents éléments afin de former l'URL de l'image
+	// Associates the different elements to form the URL of the image
 	$nom = "image/photos/{$num}.{$extension_upload}";
 
-	// Déplacer l'image dans le dossier spécifié
+	// Move the image to the specified folder
 	
 	try {
 		$resultat = move_uploaded_file($_FILES['image']['tmp_name'], $nom);
@@ -28,7 +28,7 @@
 		die ('File did not upload: ' . $e->getMessage());
 	}
 
-	// Ajoute le nouvel événement dans la base de donnée
+	// Adds the new event to the database
 
 	try {
 		$requete2 = $bdd->prepare("call add_event(:title,:description,:date_in)");
@@ -45,7 +45,7 @@
 	$donnees = $requete2->fetch();
 	$event_id_in=$donnees['event_id_out'];
 	
-	// Ajoute l'URL de l'image dans la base de donnée en l'associant à l'événement
+	// Adds the URL of the image to the database by associating it with the event
 
 	try {
 
@@ -59,7 +59,7 @@
 		echo $e;
 	}
 	
-	// Redirige vers la boite à idée
+	// Redirect to BoiteIdee.php
 
 	header('Location: BoiteIdee.php');
 ?>

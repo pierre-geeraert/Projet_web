@@ -1,7 +1,7 @@
 <?php  
 	session_start(); 
 	
-	// Attribuer la valeur null à toutes les variables
+	// Assign null value to all variables
 	
 	$_SESSION['login']=null;
 	$_SESSION['name'] = null;
