@@ -8,21 +8,16 @@ $bdd = new PDO('mysql:host=mysql-pi-ux-ce.alwaysdata.net;dbname=pi-ux-ce_web;cha
 
 // we find our title , description date and user_id from post or session var
 $title=$_POST['title'];
-
 $desc=$_POST['desc'];
 $prix=$_POST['prix'];
 
-echo $title;
-echo $prix;
-echo $desc;
+
 //Use to upload and move pictures
 $extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png' );
 $extension_upload = strtolower(  substr(  strrchr($_FILES['image']['name'], '.')  ,1)  );
 $num = md5(uniqid(rand(), true));
 $nom = "Images/Produits/{$num}.{$extension_upload}";
-echo "<p>$extension_upload</p>";
-echo "<p>$num</p>";
-echo "<p>$nom</p>";
+
 
 
 try {
@@ -47,7 +42,7 @@ try {
     $requete1->bindValue(':url', $nom, PDO::PARAM_STR);
     $requete1->execute();
 
-
+    header('location: Boutique.php');
     } catch (PDOException $e)
 {
     echo $e;
