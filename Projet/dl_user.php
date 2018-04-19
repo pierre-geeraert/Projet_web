@@ -17,10 +17,7 @@ for($var=1; $var<=$nbr ; $var++)
 
     }
 }
-//echo "<p>$event_id</p>";
 
-
-//$event_id=7;
 try {
 
     $requete = $bdd->prepare("call registered_list(:event_id)");
@@ -50,12 +47,7 @@ for ($i=0; $i < $tt; $i++) {
     //$name_out
     fputcsv($out, array($donnees[$i]['name'],$donnees[$i]['surname']));
 }
-/*
-foreach ($donnees as $fields) {
-    fputcsv($fp, $fields);
-    fputcsv($out, array($bar,$var));
-}
-*/
+
 
 
 

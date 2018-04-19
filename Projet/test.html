@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+    <TITLE>Self Close</TITLE>
+
+    <SCRIPT>
+        var howLong = 5000;
+        t = null;
+        function closeMe(){
+            t = setTimeout("self.close()",howLong);
+        }
+    </SCRIPT>
+</HEAD>
+
+<BODY text="#990000" onload="closeMe();self.focus()">
+
+<TABLE align="center" width="300">
+    <TR>
+        <TD align="center">
+            <P align="center"><B>This window will self destruct in 5 seconds!</B>
+        </TD>
+    </TR>
+</TABLE>
+
+</BODY>
+
+</HTML>
