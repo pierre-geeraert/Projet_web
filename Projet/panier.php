@@ -13,7 +13,7 @@ Date : 2018
 Contexte : Projet Web Exia CESI
 #######################################-->
 
-<html style="overflow-y: hidden;">
+<html style="overflow-x: hidden;">
 
 	<head>
 		<meta charset="utf-8" />
@@ -74,12 +74,13 @@ Contexte : Projet Web Exia CESI
 					
 		${'id'.$var}=$product['product_id'];
 		${'nb'.$var}=$_SESSION['panier'][$product['product_id']];
+		${'prix'.$var}=number_format($product['price'], 2, ',', ' ');
 	?>
 			
 	<div id="Productlist">
 		<span class="name"style="width:25%"><?= $product['name']; ?></span>
 		<span class="price"style="width:25%"><?= number_format($product['price'], 2, ',', ' '); ?> €</span>
-		<span class="quantity" style="width:25%"><input type="text" name="panier[quantity][<?= $product['product_id']; ?>]" value=<?= $_SESSION['panier'][$product['product_id']]?>></span>
+		<span class="quantity" style="width:25%"><?= $_SESSION['panier'][$product['product_id']]?></span>
 
 		<span class="action" style="width:20%">
 		<a href="panier.php?delPanier=<?= $product['product_id']; ?>" class="del"><img src="Images/del.png" height="50"></a>
@@ -89,7 +90,18 @@ Contexte : Projet Web Exia CESI
 	<?php endforeach; ?>
 	
 	
-	<h2> test </h2>
+	
+	<?php
+		// Calculation of the total price
+		$total_prix=0;
+		for($var_prix=1; $var_prix<=$var; $var_prix++){
+			$total_prix += ${'prix'.$var_prix} * ${'nb'.$var_prix};
+		}
+	?>
+	
+	<!-- Display of the total price -->
+	
+	<h2> Total : <?= number_format($total_prix, 2, ',', ' '); ?> €</h2>
 	
 	
 		</form>

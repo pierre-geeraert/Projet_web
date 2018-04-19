@@ -6,7 +6,8 @@
 
 	$nb_product = $_POST['var'];
 	$user_id = $_SESSION['id'];
-
+	
+	
 	
 	// for each product
 
@@ -20,8 +21,10 @@
 		
 		
 		$bdd->query('call add_product_cart("'.$id.'","'.$user_id.'")');
-		$bdd->query('call cart_validation("'.$user_id.'")');
+		
 	}
+	
+	$bdd->query('call cart_validation("'.$user_id.'")');
 
 	header('Location: Boutique.php');
 ?>
