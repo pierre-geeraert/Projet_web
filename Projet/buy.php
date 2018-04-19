@@ -18,7 +18,9 @@
 		
 		// Insert the product ID and the ID of the user who bought it
 		
+		
 		$bdd->query('call add_product_cart("'.$id.'","'.$user_id.'")');
+		$bdd->query('call cart_validation("'.$user_id.'")');
 	}
 
 	header('Location: Boutique.php');
