@@ -88,6 +88,12 @@
 				</div>
 				<?php endforeach; ?>
 
+				<div class="rowtotal">
+				<span class="total"><?= number_format($panier->total()); ?> € </span>
+				</div>
+						<input type="submit" value="Recalculer">
+				
+
 				</form>
 				<ul>
 				<form method="post" action="buy.php">

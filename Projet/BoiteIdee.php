@@ -9,7 +9,7 @@
         <meta charset="utf-8" />
         <link rel="stylesheet" href="css/style.css" />
 		<link rel="stylesheet" href="css/BoiteIdee.css" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width">
         <title>BDE Arras</title>
     </head>
  
@@ -21,7 +21,7 @@
 
 	<body>
 
-		<div class="wrapper">
+		<div class="Idea">
 
 			<div class="form-style-6">
 				<h1>Quel est votre idée</h1>
@@ -64,8 +64,9 @@
 					// La balise <fieldset> permet délimiter graphiquement une zone
 					
 					echo ' 
+						<div id=container>
 					<ul class="center_boite">
-						<fieldset>
+						<fieldset class="under">
 							'.${'event'.$var}.'
 							<fieldset class="inner">										
 								<p>'.${'description'.$var}.'</p>
