@@ -1,6 +1,6 @@
 <?php
 	session_start();
-
+	$bdd = new PDO('mysql:host=mysql-pi-ux-ce.alwaysdata.net;dbname=pi-ux-ce_web;charset=utf8', 'pi-ux-ce_web', 'cesi');
 	// Retrieves the title, description, and date of the new event
 	
 	$title=$_POST['title'];
@@ -15,7 +15,7 @@
 	// Generates a random number, it will serve as the name for the image
 	$num = md5(uniqid(rand(), true));
 	// Associates the different elements to form the URL of the image
-	$nom = "image/photos/{$num}.{$extension_upload}";
+	$nom = "image/{$num}.{$extension_upload}";
 
 	// Move the image to the specified folder
 	

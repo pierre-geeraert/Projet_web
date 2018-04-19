@@ -1,6 +1,4 @@
 <?php
-//$token= $_POST['token'];
-//echo token;
 $to="pierre.geeraert@viacesi.fr";
 $token="1fd534473a09b2e147ef375de54d47c09ab39aec";
 $message = 'Merci de copier le lien: http://127.0.0.1/validation_user.php/?token='.$token.'';

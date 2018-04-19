@@ -20,7 +20,7 @@ $num = md5(uniqid(rand(), true));
 
 // Create the name picture
 
-$nom = "image/photos/{$num}.{$extension_upload}";
+$nom = "image/{$num}.{$extension_upload}";
 
 // Check if the user participated at the event
 

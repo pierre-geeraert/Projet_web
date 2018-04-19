@@ -13,7 +13,7 @@ Date : 2018
 Contexte : Projet Web Exia CESI
 #######################################-->
 
-<html>
+<html style="overflow-y: hidden;">
 
 	<head>
 		<meta charset="utf-8" />
@@ -87,6 +87,11 @@ Contexte : Projet Web Exia CESI
 	</div>
 	
 	<?php endforeach; ?>
+	
+	
+	<h2> test </h2>
+	
+	
 		</form>
 		<ul>
 		<form method="post" action="buy.php">
