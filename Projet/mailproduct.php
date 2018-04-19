@@ -5,7 +5,9 @@ $DB = new Database();
 $panier = new panier($DB);
 ?>
 <?php
-$_SESSION['panier'] = $_POST['panier']; ?>
+$_SESSION['panier'] = $_POST['panier'];
+
+?>
 
 
 

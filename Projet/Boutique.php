@@ -91,7 +91,7 @@
                   <div class="wrapper3" v-for="t in prod">  <!-- rendering a list of elements based on a table, t is an element of the table prod -->
                     
                     <div class="product-img">
-                      <img :src="`Images/Produits/${t.url}`">
+                      <img :src="`${t.url}`">
                     </div>
 
                     <div class="product-info">
@@ -140,7 +140,7 @@
               <div class="wrapper3" v-for="b in best">
 
                 <div class="product-img">
-                  <img :src="`Images/Produits/${b.url}`">
+                  <img :src="`${b.url}`">
                 </div>
 
                 <div class="product-info">

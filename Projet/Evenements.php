@@ -71,8 +71,8 @@ echo '
 
 <p class="description"> '.${'description'.$var}.' </p>
 
-<form id="'.$var.'" action="participate.php" method="post">
-<input type="hidden" name="'.$var.'" value="'.${'id'.$var}.'"/>
+<form id="'.$var. '" action="participate.php" method="post">
+<input type="hidden" name="' .$var.'" value="'.${'id'.$var}.'"/>
 <input type="hidden" name="nbr_event" value="'.$nbr_event.'"/>
 </form> 
 <a class="participate "href=\'#\' onclick=\'document.getElementById("'.$var.'").submit()\'> Je participe </a>
@@ -84,8 +84,8 @@ if($_SESSION['statut'] === "BDE")
 { 
 echo '
 <ul> 
-<form id="'.$var.'" action="dl_user.php" method="post">
-<input type="hidden" name="'.$var.'" value="'.${'id'.$var}.'"/>
+<form id="'.$var. '" action="dl_user.php" method="post">
+<input type="hidden" name="' .$var.'" value="'.${'id'.$var}.'"/>
 <input type="hidden" name="nbr_event" value="'.$nbr_event.'"/>
 <input type="submit" name="submit" value="liste des inscrits" />
 </form> 
@@ -129,8 +129,8 @@ echo '
 <ul>
 <fieldset>
 
-<form id="'.$id_form.'" action="script_event.php" method="post">
-<input type="hidden" name="'.$var.'" value="'.${'id'.$var}.'"/>
+<form id="'.$id_form. '" action="script_event.php" method="post">
+<input type="hidden" name="' .$var.'" value="'.${'id'.$var}.'"/>
 <input type="hidden" name="nbr_event" value="'.$nbr_event.'"/>
 </form> 
 
@@ -139,12 +139,12 @@ echo '
 <fieldset class="inner">
 
 <p class="description">
-'.${'description'.$var}.'
+'.${'description'.$var}. '
 </p>
 <ul>    
 <form method="post" action="img.php" enctype="multipart/form-data">
 <input type="file" name="image" />
-<input name="id" type="hidden" value="'.${'id'.$var}.'"/>
+<input name="id" type="hidden" value="' .${'id'.$var}.'"/>
 <input type="submit" name="submit" value="Envoyer" />
 </form>
 </ul>
